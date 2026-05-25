@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>家中花草志 · 開發入口</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  :root {
+    --paper: #f1e9d6;
+    --paper-light: #f7f0dd;
+    --ink: #2a2419;
+    --ink-soft: #4a3f2c;
+    --ink-faded: #7a6a4f;
+    --rule: #8a7a5c;
+    --moss-deep: #2f3a22;
+    --rust: #9a4a2a;
+    --serif-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --display: 'IM Fell English', 'EB Garamond', Georgia, serif;
+    --display-sc: 'IM Fell English SC', 'EB Garamond', Georgia, serif;
+  }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: var(--paper);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif-body);
+    color: var(--ink);
+    padding: 32px;
+  }
+  .wrap { max-width: 720px; width: 100%; }
+  .label { font-family: var(--display-sc); letter-spacing: 0.2em; font-size: 11px; color: var(--ink-faded); }
+  .site-title { font-family: var(--display); font-size: 40px; line-height: 1; color: var(--moss-deep); margin: 8px 0 0; }
+  .site-sub { font-family: var(--display); font-style: italic; font-size: 16px; color: var(--ink-faded); margin-top: 8px; }
+  .rule { border-top: 1px solid var(--rule); border-bottom: 3px double var(--rule); height: 5px; margin: 20px 0 28px; }
+  .grid { display: grid; gap: 16px; }
+  .card {
+    border: 1px solid var(--rule);
+    background: var(--paper-light);
+    padding: 20px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .card:hover { background: #f8f1de; transform: translateY(-1px); }
+  .card-num { font-family: var(--display); font-style: italic; font-size: 13px; color: var(--ink-faded); }
+  .card-en { font-family: var(--display); font-size: 22px; color: var(--moss-deep); margin-top: 4px; }
+  .card-zh { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+  .arrow { font-family: var(--display); font-style: italic; font-size: 26px; color: var(--rust); align-self: center; }
+  .back { margin-top: 28px; }
+  .back a { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.15em; color: var(--ink-faded); text-decoration: none; }
+  .back a:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="label">Folia Domestica · Dev Portal</div>
+  <h1 class="site-title">開發入口</h1>
+  <div class="site-sub">此頁面不對外公開 · Internal use only</div>
+  <div class="rule"></div>
+
+  <div class="grid">
+    <a class="card" href="admin.html">
+      <div>
+        <div class="card-num">iii.</div>
+        <div class="card-en">Tabula · 後台儀表板</div>
+        <div class="card-zh">瀏覽次數、熱門文章、來源比例、分類存量（介面雛形 · 數據為示意樣本）</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card" href="canvas.html">
+      <div>
+        <div class="card-num">iv.</div>
+        <div class="card-en">Canvas · 設計版</div>
+        <div class="card-zh">所有頁面並排比較（封面卷首 B、首頁、文章內頁、後台）</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="back"><a href="index.html">← 回公開入口</a></div>
+</div>
+</body>
+</html>

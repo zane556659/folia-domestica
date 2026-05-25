@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-239WJ037YX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-239WJ037YX');
+</script>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>家中花草志 · 所有植物</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --paper: #f1e9d6; --paper-light: #f7f0dd;
+  --ink: #2a2419; --ink-soft: #4a3f2c; --ink-faded: #7a6a4f;
+  --rule: #8a7a5c; --moss: #4a5a36; --moss-deep: #2f3a22; --rust: #9a4a2a;
+  --serif-body: 'EB Garamond', Georgia, serif;
+  --display: 'IM Fell English', 'EB Garamond', Georgia, serif;
+  --display-sc: 'IM Fell English SC', 'EB Garamond', Georgia, serif;
+  --mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif-body); }
+.site-header { max-width: 1180px; margin: 0 auto; padding: 20px 40px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--rule); }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.logo-box { width: 30px; height: 30px; border: 1.5px solid var(--moss-deep); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-style: italic; font-size: 17px; color: var(--moss-deep); }
+.logo-name { font-family: var(--display); font-size: 20px; color: var(--moss-deep); }
+.back-link { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.15em; color: var(--ink-faded); text-decoration: none; }
+.back-link:hover { color: var(--ink); }
+.site-footer { border-top: 3px double var(--rule); background: var(--paper-light); margin-top: 60px; }
+.footer-inner { max-width: 1180px; margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.2em; color: var(--ink-faded); }
+
+.page-header { max-width: 1180px; margin: 40px auto 0; padding: 0 40px 24px; border-bottom: 3px double var(--rule); }
+.page-title { font-family: var(--display); font-weight: 400; font-size: 36px; color: var(--moss-deep); margin: 0 0 6px; }
+.page-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-faded); }
+.grid { max-width: 1180px; margin: 36px auto 60px; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.card { text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper-light); display: flex; flex-direction: column; transition: transform 0.15s; }
+.card:hover { transform: translateY(-2px); }
+.card-cover { height: 200px; background-size: cover; background-position: center; filter: sepia(0.15) contrast(0.96); border-bottom: 1px solid var(--rule); }
+.card-cover--empty { background: var(--paper); }
+.card-body { padding: 18px 20px; }
+.card-date { font-family: var(--mono); font-size: 10px; color: var(--ink-faded); margin-bottom: 6px; }
+.card-name { font-family: var(--display); font-size: 24px; color: var(--moss-deep); line-height: 1.2; }
+.card-sci { font-family: var(--display); font-style: italic; font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+.card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.card-tag { font-family: var(--display-sc); font-size: 9px; letter-spacing: 0.18em; color: var(--ink-faded); border: 1px solid var(--rule); padding: 2px 8px; }
+.card-status { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+.filter-bar { max-width: 1180px; margin: 28px auto 0; padding: 0 40px; display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.18em; color: var(--ink-faded); background: none; border: 1px solid var(--rule); padding: 5px 16px; cursor: pointer; transition: all 0.15s; }
+.filter-btn:hover { color: var(--ink); border-color: var(--ink-soft); }
+.filter-btn.active { background: var(--moss-deep); color: var(--paper-light); border-color: var(--moss-deep); }
+.card.hidden { display: none; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="index.html"><div class="logo-box">F</div><span class="logo-name">家中花草志</span></a>
+  <nav style="display:flex;gap:0;align-items:center;">
+    <a class="back-link" href="home.html" style="border-right:1px solid var(--rule);padding-right:16px;margin-right:0;color:var(--moss-deep);">植物目錄</a>
+    <a class="back-link" href="substrate.html" style="padding-left:16px;">介質介紹</a>
+  </nav>
+</header>
+
+<div class="page-header">
+  <h1 class="page-title">所有植物 · Catalogue</h1>
+  <div class="page-meta">共 13 筆 · 最後同步：2026-05-09 09:39</div>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">全部</button>
+</div>
+
+<div class="grid">
+<a class="card" href="post-34ed3d8dc0cf81af8709eb4a810b37fa.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 26</div>
+    <div class="card-name">羽葉沒藥</div>
+    <div class="card-sci"><em>Commiphora monstruosa</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-34ed3d8dc0cf8108ae0df23320072104.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 26</div>
+    <div class="card-name">波折沒藥</div>
+    <div class="card-sci"><em>Commiphora sinuata</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-34ed3d8dc0cf81dfa901da259df02887.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 26</div>
+    <div class="card-name">懷特沒藥</div>
+    <div class="card-sci"><em>Commiphora wightii</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-34ed3d8dc0cf81a08d37f429444b944b.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 26</div>
+    <div class="card-name">尼哥乳香</div>
+    <div class="card-sci"><em>Boswellia neglecta</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-34bd3d8dc0cf81ab8e18e1f56982bece.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 23</div>
+    <div class="card-name">溫莎瓶幹</div>
+    <div class="card-sci"><em>Pachypodium baronii var. windsorii</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-34fd3d8dc0cf81438df8da8d6b9e5e63.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 22</div>
+    <div class="card-name">萊曼藍葉蘇鐵</div>
+    <div class="card-sci"><em>Encephalartos lehmannii</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-348d3d8dc0cf8109a6f7c9caa1ad0c4c.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 20</div>
+    <div class="card-name">帝冠</div>
+    <div class="card-sci"><em>Obregonia denegrii</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌤 普通</div>
+  </div>
+</a><a class="card" href="post-347d3d8dc0cf81bab62af8b1325a8486.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 19</div>
+    <div class="card-name">索島細葉沙玫</div>
+    <div class="card-sci"><em>Adenium somalense var. crispum</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌤 普通</div>
+  </div>
+</a><a class="card" href="post-345d3d8dc0cf81a5abc7e9e30e3aba1c.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 17</div>
+    <div class="card-name">南非龜甲龍</div>
+    <div class="card-sci"><em>Dioscorea elephantipes</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-343d3d8dc0cf81e8897de6770d15c21b.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 15</div>
+    <div class="card-name">Chimanimaniensis x Eugene Maraisii x Chimanimaniensis</div>
+    <div class="card-sci"><em>Chimanimaniensis x Eugene Maraisii x Chimanimaniensis</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-341d3d8dc0cf8190ab02c960680c7aaf.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 13</div>
+    <div class="card-name">銀冠玉</div>
+    <div class="card-sci"><em>Lophophora fricii</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌤 普通</div>
+  </div>
+</a><a class="card" href="post-340d3d8dc0cf81fdb95cd598cc92e6f4.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 12</div>
+    <div class="card-name">沙漠樹木</div>
+    <div class="card-sci"><em>Senna meridionalis</em></div>
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a><a class="card" href="post-340d3d8dc0cf81d3b513fb494ecdaaa3.html" data-tags="">
+  <div class="card-cover card-cover--empty"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 04 / 12</div>
+    <div class="card-name">簇生福桂樹</div>
+    
+    <div class="card-tags"></div>
+    <div class="card-status">🌿 良好</div>
+  </div>
+</a>
+</div>
+
+<footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>MMXXVI</span></div></footer>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.card').forEach(card => {
+      if (f === 'all' || card.dataset.tags.split(' ').includes(f)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

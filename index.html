@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-239WJ037YX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-239WJ037YX');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>家中花草志 · 入口</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+  :root {
+    --paper: #f1e9d6;
+    --paper-light: #f7f0dd;
+    --ink: #2a2419;
+    --ink-soft: #4a3f2c;
+    --ink-faded: #7a6a4f;
+    --rule: #8a7a5c;
+    --moss-deep: #2f3a22;
+    --rust: #9a4a2a;
+    --serif-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    --display: 'IM Fell English', 'EB Garamond', Georgia, serif;
+    --display-sc: 'IM Fell English SC', 'EB Garamond', Georgia, serif;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(120, 90, 50, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(80, 60, 30, 0.06) 0%, transparent 55%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif-body);
+    color: var(--ink);
+    padding: 32px;
+  }
+
+  .wrap {
+    max-width: 720px;
+    width: 100%;
+  }
+
+  .label {
+    font-family: var(--display-sc);
+    letter-spacing: 0.2em;
+    font-size: 11px;
+    color: var(--ink-faded);
+  }
+
+  .site-title {
+    font-family: var(--display);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--moss-deep);
+    margin: 8px 0 0;
+  }
+
+  .site-sub {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
+  .rule {
+    border-top: 1px solid var(--rule);
+    border-bottom: 3px double var(--rule);
+    height: 5px;
+    margin: 22px 0 32px;
+  }
+
+  .grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .card {
+    border: 1px solid var(--rule);
+    background: var(--paper-light);
+    padding: 22px 26px;
+    text-decoration: none;
+    color: inherit;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    transition: background 0.15s, transform 0.15s;
+  }
+
+  .card:hover {
+    background: #f8f1de;
+    transform: translateY(-1px);
+  }
+
+  .card-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-faded);
+  }
+
+  .card-en {
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--moss-deep);
+    margin-top: 4px;
+  }
+
+  .card-zh {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  .arrow {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--rust);
+    align-self: center;
+  }
+
+  .footer {
+    margin-top: 36px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="label">Folia Domestica · est. MMXXVI</div>
+  <h1 class="site-title">家中花草志</h1>
+  <div class="site-sub">A Field Companion of Houseplants</div>
+  <div class="rule"></div>
+
+  <div class="grid">
+    <a class="card" href="home.html">
+      <div>
+        <div class="card-num">i.</div>
+        <div class="card-en">Catalogue · 植物目錄</div>
+        <div class="card-zh">所有植物一覽，依分類篩選</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <a class="card" href="substrate.html">
+      <div>
+        <div class="card-num">ii.</div>
+        <div class="card-en">Substrates · 介質介紹</div>
+        <div class="card-zh">珍珠石、椰殼屑、樹皮⋯⋯介質特性與適用對象</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+  </div>
+
+  <div class="footer label">—— folia · flores · cura domestica ——</div>
+</div>
+</body>
+</html>
