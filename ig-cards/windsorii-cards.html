@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>IG Cards — 溫莎瓶幹</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ─ Page ─────────────────────────────────────── */
+body {
+  margin: 0;
+  background: #4a4a4a;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+/* ─ Instructions ─────────────────────────────── */
+.howto {
+  width: 1080px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 24px 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #333;
+}
+.howto b { color: #000; }
+.howto code { background: #f0f0f0; padding: 1px 6px; border-radius: 2px; }
+
+/* ─ Variables ────────────────────────────────── */
+:root {
+  --paper:       #f1e9d6;
+  --paper-light: #f7f0dd;
+  --ink:         #2a2419;
+  --ink-soft:    #4a3f2c;
+  --ink-faded:   #7a6a4f;
+  --rule:        #8a7a5c;
+  --moss-deep:   #2f3a22;
+  --rust:        #9a4a2a;
+  --display:     'IM Fell English', 'EB Garamond', Georgia, serif;
+  --display-sc:  'IM Fell English SC', 'EB Garamond', Georgia, serif;
+  --mono:        'JetBrains Mono', 'Courier New', monospace;
+}
+
+/* ─ Card shell ───────────────────────────────── */
+.card {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at 18% 8%,  rgba(120,90,50,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 82% 92%, rgba(80,60,30,0.06)  0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* ─ Top label + band ─────────────────────────── */
+.top-label {
+  flex-shrink: 0;
+  font-family: var(--display-sc);
+  font-size: 21px;
+  letter-spacing: 0.26em;
+  color: var(--ink-faded);
+  text-align: center;
+  padding: 24px 80px 20px;
+}
+.band {
+  flex-shrink: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  height: 4px;
+}
+
+/* ─ Bottom bar ───────────────────────────────── */
+.bottom-bar {
+  flex-shrink: 0;
+  padding: 16px 80px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--rule);
+}
+.ig-handle {
+  font-family: var(--mono);
+  font-size: 21px;
+  color: var(--ink-faded);
+  letter-spacing: 0.05em;
+}
+.card-num {
+  font-family: var(--mono);
+  font-size: 19px;
+  color: var(--rule);
+  letter-spacing: 0.1em;
+}
+
+/* ─ Content area ─────────────────────────────── */
+.content {
+  flex: 1;
+  overflow: hidden;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─ Typography ───────────────────────────────── */
+.plant-name {
+  font-family: var(--display);
+  font-size: 88px;
+  font-weight: 400;
+  line-height: 1.0;
+  color: var(--moss-deep);
+  margin: 0 0 8px;
+}
+.sci-name {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 34px;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+.origin-tag {
+  font-family: var(--display-sc);
+  font-size: 21px;
+  letter-spacing: 0.18em;
+  color: var(--ink-faded);
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--moss-deep);
+  margin: 0 0 6px;
+  line-height: 1.05;
+}
+.sub-title {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 34px;
+  color: var(--rust);
+  margin: 26px 0 6px;
+  line-height: 1.2;
+}
+.para {
+  font-size: 29px;
+  line-height: 1.72;
+  color: var(--ink);
+  margin: 6px 0;
+}
+.para strong { color: var(--ink); }
+
+.hr { border: none; border-top: 1px solid var(--rule); margin: 18px 0 22px; }
+.hr-dbl { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); height: 4px; margin: 22px 0; }
+
+/* ─ Photo ────────────────────────────────────── */
+.photo-frame {
+  flex-shrink: 0;
+  margin: 16px 0;
+}
+.photo-frame img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(60,45,20,0.5);
+  outline: 6px solid var(--paper);
+  outline-offset: -10px;
+  filter: sepia(0.15) contrast(0.96) saturate(0.88);
+}
+
+/* ─ Rain rows ────────────────────────────────── */
+.rain-row {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(138,122,92,0.3);
+  font-size: 27px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.rain-row:last-child { border-bottom: none; }
+.rain-label {
+  font-family: var(--display-sc);
+  font-size: 21px;
+  letter-spacing: 0.12em;
+  color: var(--ink-faded);
+  flex-shrink: 0;
+  width: 90px;
+}
+
+/* ─ Kill list ────────────────────────────────── */
+.kill-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.kill-list li {
+  font-size: 27px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  padding: 11px 0 11px 52px;
+  border-bottom: 1px solid rgba(138,122,92,0.22);
+  position: relative;
+}
+.kill-list li:last-child { border-bottom: none; }
+.kill-n {
+  position: absolute;
+  left: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 30px;
+  color: var(--rule);
+  line-height: 1.5;
+}
+.kill-list li strong { color: var(--ink); }
+
+.bquote {
+  border-left: 4px double var(--rule);
+  padding: 14px 22px;
+  background: var(--paper-light);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 20px 0 0;
+}
+
+/* ─ Mix list ─────────────────────────────────── */
+.mix-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+}
+.mix-list li {
+  font-family: var(--mono);
+  font-size: 25px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(138,122,92,0.22);
+}
+.mix-list li:last-child { border-bottom: none; }
+
+/* ─ Note text ────────────────────────────────── */
+.note {
+  font-size: 24px;
+  color: var(--ink-faded);
+  line-height: 1.65;
+  font-style: italic;
+  margin: 10px 0 0;
+}
+</style>
+</head>
+<body>
+
+<!-- ─ Instructions ──────────────────────────── -->
+<div class="howto">
+  <b>截圖步驟（Chrome）：</b><br>
+  1. 按 <code>F12</code> 開啟 DevTools<br>
+  2. 在 Elements 面板裡找到想截的 <code>&lt;div id="card1"&gt;</code>（或 card2 / card3 / card4）<br>
+  3. 對那個元素按右鍵 → <b>Capture node screenshot</b><br>
+  4. 會自動下載 1080×1350px PNG ✓<br><br>
+  <b>Card 1 封面注意：</b>現在放的是真實照片（暫代）。<br>
+  ChatGPT 插畫生成完後，把 img src 換成本地圖片路徑即可。
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CARD 1 — 封面                              -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card1">
+  <div class="top-label">家中花草志 · Folia Domestica</div>
+  <div class="band"></div>
+
+  <!-- Photo — 換成 AI 插畫後改 src -->
+  <div class="photo-frame" style="margin: 28px 80px 0; flex: 1;">
+    <img src="windsorii-illustration.png"
+         alt="溫莎瓶幹"
+         style="height: 680px; width: 100%; object-fit: contain;" />
+  </div>
+
+  <!-- Name plate -->
+  <div style="padding: 0 80px; flex-shrink: 0;">
+    <div class="hr-dbl"></div>
+    <h1 class="plant-name">溫莎瓶幹</h1>
+    <p class="sci-name"><em>Pachypodium baronii var. windsori</em></p>
+    <p class="origin-tag">馬達加斯加北部 · Antsiranana</p>
+    <div style="margin-top: 20px;"></div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="ig-handle">@ziv.reading</span>
+    <span class="card-num">1 / 4</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CARD 2 — 原產地的生活模式                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card2">
+  <div class="top-label">家中花草志 · Folia Domestica</div>
+  <div class="band"></div>
+
+  <div class="content" style="padding-top: 44px;">
+    <div class="section-title">原產地的生活模式</div>
+    <div class="hr"></div>
+
+    <div class="sub-title">日照</div>
+    <p class="para">全年強烈直射，幾乎無遮蔽。<br>日照時數 <strong>8–10 小時</strong>。</p>
+
+    <div class="sub-title">雨量</div>
+    <div class="rain-row">
+      <span class="rain-label">雨季</span>
+      <span>11月 – 4月，每月往盆裡倒 <strong>15–30 杯水</strong>（200 ml / 杯）</span>
+    </div>
+    <div class="rain-row">
+      <span class="rain-label">乾季</span>
+      <span>5月 – 10月，<strong>完全不下雨</strong>。整整半年不喝水。</span>
+    </div>
+    <p class="note">月份為南半球分佈；台灣養護依氣溫決定，不看月份。</p>
+
+    <div class="sub-title">根系</div>
+    <p class="para">
+      <strong>鬚根系</strong>，從塊莖基部向四面擴散，無明顯主根。<br>
+      選盆：<strong>淺盆 + 快排水介質</strong>，精準控制乾濕節奏。
+    </p>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="ig-handle">@ziv.reading</span>
+    <span class="card-num">2 / 4</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CARD 3 — 怎麼把它養死                      -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card3">
+  <div class="top-label">家中花草志 · Folia Domestica</div>
+  <div class="band"></div>
+
+  <div class="content" style="padding-top: 44px;">
+    <div class="section-title">怎麼把它養死</div>
+    <div class="hr"></div>
+
+    <ol class="kill-list">
+      <li>
+        <span class="kill-n">一</span>
+        <strong>氣溫下降還繼續澆水</strong><br>
+        秋冬半休眠期給水，根系直接腐爛
+      </li>
+      <li>
+        <span class="kill-n">二</span>
+        <strong>底部積水</strong><br>
+        無排水孔或介質保水過高，根系缺氧爛掉
+      </li>
+      <li>
+        <span class="kill-n">三</span>
+        <strong>低溫 + 潮濕同時出現</strong><br>
+        低於 10°C 時介質還是濕的，爛根速度加倍
+      </li>
+      <li>
+        <span class="kill-n">四</span>
+        <strong>夏季強迫遮陰</strong><br>
+        搬進室內，光合不足，塊莖停止膨大甚至萎縮
+      </li>
+      <li>
+        <span class="kill-n">五</span>
+        <strong>剛換盆就大量澆水</strong><br>
+        傷口未癒合進水，直接感染腐爛
+      </li>
+    </ol>
+
+    <div class="bquote">
+      反過來看：氣溫涼了就控水、排水要快、<br>
+      冬天移到最多日照的位置、換盆後等一週再澆第一次水。
+    </div>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="ig-handle">@ziv.reading</span>
+    <span class="card-num">3 / 4</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CARD 4 — 換盆紀錄                          -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card4">
+  <div class="top-label">家中花草志 · Folia Domestica</div>
+  <div class="band"></div>
+
+  <div class="content" style="padding-top: 44px;">
+    <div class="section-title">換盆紀錄</div>
+    <p style="font-family: var(--mono); font-size: 22px; color: var(--ink-faded); margin: 4px 0 18px; letter-spacing: 0.05em;">
+      2026 / 04 / 23
+    </p>
+    <div class="hr" style="margin-top: 0;"></div>
+
+    <div class="photo-frame" style="margin: 0 0 24px;">
+      <img src="https://i.ibb.co/PzznxDwn/e0b4a5d61568.jpg"
+           alt="根系狀況"
+           style="max-height: 480px; object-fit: cover;" />
+    </div>
+
+    <p class="para" style="margin-bottom: 8px;"><strong>換盆介質配比</strong></p>
+    <ul class="mix-list">
+      <li>預混介質 60%（7 : 2 : 1）</li>
+      <li>桐生砂 30%（增重、透氣）</li>
+      <li>有機質（蚯蚓糞）10%</li>
+      <li>鈣粉 3–5%（強化防禦）</li>
+    </ul>
+    <p class="note" style="margin-top: 18px;">換盆後等 <strong style="font-style:normal; color: var(--ink);">一週</strong> 再澆第一次水。</p>
+  </div>
+
+  <div class="bottom-bar">
+    <span class="ig-handle">@ziv.reading</span>
+    <span class="card-num">4 / 4</span>
+  </div>
+</div>
+
+</body>
+</html>
