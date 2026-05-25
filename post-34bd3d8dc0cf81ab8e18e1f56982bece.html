@@ -10,7 +10,7 @@
   gtag('config', 'G-239WJ037YX');
 </script>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>溫莎瓶幹 · Pachypodium baronii var. windsorii — 家中花草志</title>
+<title>溫莎瓶幹 · Pachypodium baronii var. windsori — 家中花草志</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=JetBrains+Mono&display=swap" rel="stylesheet" />
 <style>
 :root {
@@ -38,20 +38,48 @@ article { max-width: 760px; margin: 0 auto; padding: 48px 40px 60px; }
 .article-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-faded); margin-bottom: 8px; display: flex; gap: 16px; }
 .plant-name { font-family: var(--display); font-size: 52px; font-weight: 400; line-height: 1.05; color: var(--moss-deep); margin: 8px 0 4px; }
 .sci-name { font-family: var(--display); font-style: italic; font-size: 21px; color: var(--ink-soft); margin-bottom: 16px; }
-.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
 .tag { font-family: var(--display-sc); font-size: 10px; letter-spacing: 0.2em; color: var(--ink-faded); border: 1px solid var(--rule); padding: 2px 10px; }
 .cover-wrap { margin: 0 0 32px; }
 .cover-img { width: 100%; max-height: 480px; object-fit: cover; border: 1px solid rgba(60,45,20,0.55); outline: 4px solid var(--paper); outline-offset: -7px; filter: sepia(0.15) contrast(0.96) saturate(0.9); display: block; }
-.sec-h2 { font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--moss-deep); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 36px 0 14px; }
+
+/* TOC */
+.toc-box { border: 1px solid var(--rule); background: var(--paper-light); padding: 18px 22px; margin-bottom: 40px; }
+.toc-title { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.22em; color: var(--ink-faded); margin-bottom: 12px; }
+.toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li a { font-family: var(--display); font-size: 15px; color: var(--ink-soft); text-decoration: none; display: flex; align-items: baseline; gap: 8px; }
+.toc-list li a:hover { color: var(--moss-deep); }
+.toc-list li a .toc-num { font-family: var(--mono); font-size: 10px; color: var(--rule); }
+
+/* Sections */
+.sec-h2 { font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--moss-deep); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 44px 0 14px; scroll-margin-top: 24px; }
 .sec-h3 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 18px; color: var(--rust); margin: 28px 0 8px; }
 .para { font-size: 16px; line-height: 1.85; color: var(--ink); text-align: justify; margin: 12px 0; }
 .blist { margin: 10px 0; padding-left: 22px; }
-.blist li { font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 4px; }
+.blist li { font-size: 15px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 6px; }
+.blist li strong { color: var(--ink); }
 .obs-fig { margin: 20px 0; }
 .obs-fig img { width: 100%; max-height: 65vh; object-fit: contain; display: block; border: 1px solid rgba(60,45,20,0.45); filter: sepia(0.12) contrast(0.96); }
 .img-cap { text-align: center; font-family: var(--display); font-style: italic; font-size: 12px; color: var(--ink-faded); margin-top: 6px; }
-.divider { border: none; border-top: 1px solid var(--rule); margin: 24px 0; }
-.bquote { border-left: 3px double var(--rule); margin: 18px 0; padding: 12px 18px; background: var(--paper-light); font-style: italic; color: var(--ink-soft); }
+.divider { border: none; border-top: 1px solid var(--rule); margin: 32px 0; }
+.bquote { border-left: 3px double var(--rule); margin: 18px 0; padding: 12px 18px; background: var(--paper-light); font-style: italic; color: var(--ink-soft); font-size: 15px; line-height: 1.8; }
+.bquote strong { font-style: normal; color: var(--ink); }
+
+/* Rainfall table */
+.data-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; }
+.data-table th { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.18em; color: var(--ink-faded); border-bottom: 1px solid var(--rule); padding: 6px 10px 8px; text-align: left; }
+.data-table td { border-bottom: 1px solid rgba(138,122,92,0.3); padding: 8px 10px; color: var(--ink-soft); line-height: 1.6; }
+.data-table tr:last-child td { border-bottom: none; }
+
+/* Incident log table */
+.log-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14px; }
+.log-table th { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.18em; color: var(--ink-faded); border-bottom: 1px solid var(--rule); padding: 6px 10px 8px; text-align: left; }
+.log-table td { border-bottom: 1px solid rgba(138,122,92,0.3); padding: 8px 10px; color: var(--ink-soft); line-height: 1.6; vertical-align: top; }
+.log-table tr:last-child td { border-bottom: none; }
+
+/* Mix ratio list */
+.mix-list { margin: 10px 0; padding-left: 22px; }
+.mix-list li { font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 3px; font-family: var(--mono); font-size: 13px; }
 </style>
 </head>
 <body>
@@ -61,26 +89,135 @@ article { max-width: 760px; margin: 0 auto; padding: 48px 40px 60px; }
 </header>
 
 <article>
-  <div class="article-meta"><span>2026 / 04 / 23</span><span>🌿 良好</span></div>
+  <div class="article-meta">
+    <span>入手 2026 / 04 / 23</span>
+    <span>🌿 良好</span>
+    <span>台北北部・頂樓</span>
+  </div>
   <h1 class="plant-name">溫莎瓶幹</h1>
-  <div class="sci-name"><em>Pachypodium baronii var. windsorii</em></div>
-  <div class="tags"></div>
-  
-  <h2 class="sec-h2">📅 2026/04/23</h2>
-<figure class="obs-fig"><img src="https://i.ibb.co/FqkdTRtg/a09a0546131d.jpg" alt="" loading="lazy" /></figure>
-<figure class="obs-fig"><img src="https://i.ibb.co/PzznxDwn/e0b4a5d61568.jpg" alt="" loading="lazy" /></figure>
-<p class="para">想要換盆，因為舊的盆太過於保水（都是泥炭），這次換排水一點的介質。目標是讓葉子再小一點，不要讓葉子太大。
+  <div class="sci-name"><em>Pachypodium baronii var. windsori</em></div>
+  <div class="tags">
+    <span class="tag">棒槌樹屬</span>
+    <span class="tag">塊莖植物</span>
+    <span class="tag">馬達加斯加</span>
+    <span class="tag">全日照</span>
+  </div>
 
-介質材料比例：
-7:2:1 預混介質 60%
-桐生砂 30%（鐵質、配重）
-有機質（蚯蚓糞）10%
-鈣粉 3–5%（強化防禦）
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="段落索引">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#habitat"><span class="toc-num">I.</span> 原產地的生活模式</a></li>
+      <li><a href="#kill"><span class="toc-num">II.</span> 怎麼把它養死</a></li>
+      <li><a href="#journal"><span class="toc-num">III.</span> 我的植物成長歷程</a></li>
+      <li><a href="#incidents"><span class="toc-num">IV.</span> 突發狀況備忘錄</a></li>
+    </ul>
+  </nav>
 
-備註：適合淺盆，需注意頭重腳輕問題。</p>
-<hr class="divider" />
+  <!-- I. 原產地的生活模式 -->
+  <h2 class="sec-h2" id="habitat">一、原產地的生活模式</h2>
+  <p class="para"><strong>產地</strong>：馬達加斯加北部，集中在迪亞戈蘇亞雷茲（Antsiranana）周邊的石灰岩懸崖與乾燥岩坡。</p>
+
+  <h3 class="sec-h3">日照</h3>
+  <p class="para">全年強烈直射日照，幾乎無遮蔽。日照時數 8–10 小時。台灣北部夏季可對應，但冬季日照明顯不足，是養護的最大挑戰之一。</p>
+
+  <h3 class="sec-h3">雨量（具象化）</h3>
+  <p class="para">馬達加斯加北部屬<strong>熱帶季風氣候</strong>，雨量極度集中：</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>季節</th><th>月份（南半球）</th><th>雨量</th><th>具象化</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>雨季</td>
+        <td>11 月 – 4 月</td>
+        <td>每月 150–300 mm</td>
+        <td>相當於每個月往盆裡倒 <strong>15–30 杯水</strong>（200 ml / 杯）</td>
+      </tr>
+      <tr>
+        <td>乾季</td>
+        <td>5 月 – 10 月</td>
+        <td>每月幾乎 0 mm</td>
+        <td><strong>完全不下雨</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote class="bquote">
+    <strong>注意：</strong>馬達加斯加北部在南半球，月份分佈與台灣幾乎完全相反。但養護時不要直接對應月份，要跟著<strong>台灣的溫度</strong>走——溫度下降才是這株植物進入休眠的真正訊號，不是日曆月份。<br><br>
+    <strong>台灣養護邏輯：春夏（台灣熱）→ 正常澆水；秋冬（台灣涼）→ 大幅減水。</strong>
+  </blockquote>
+
+  <blockquote class="bquote">
+    這株植物在原產地每年有整整半年不喝水。塊莖的功能就是儲存這段時間需要的水分與養分。
+  </blockquote>
+
+  <h3 class="sec-h3">根系特性</h3>
+  <p class="para">棒槌樹屬為<strong>鬚根系</strong>——從塊莖基部長出許多細根，向四面擴散，沒有明顯的主根（與百歲蘭、蘇鐵的直根系不同）。野外生長於石灰岩峭壁，鬚根鑽進岩縫尋找水源與固著支點。</p>
+  <p class="para">真正的儲水器官是<strong>塊莖</strong>（膨大的莖部），不是根。</p>
+  <p class="para">選盆建議：<strong>淺盆 + 快排水介質</strong>。不是因為根的深度需求，而是淺盆讓你能更精準控制乾濕節奏——在台灣北部多雨的環境特別重要。</p>
+
+  <hr class="divider" />
+
+  <!-- II. 怎麼把它養死 -->
+  <h2 class="sec-h2" id="kill">二、怎麼把它養死</h2>
+  <p class="para">以下任何一條都能有效殺死這株植物：</p>
+  <ol class="blist">
+    <li><strong>氣溫下降還繼續澆水</strong> — 台灣秋冬氣溫降低時它進入半休眠，此時澆水會讓根系腐爛</li>
+    <li><strong>底部積水</strong> — 使用沒有排水孔的盆器，或介質保水性太高（純泥炭），根系缺氧直接爛掉</li>
+    <li><strong>低溫 + 潮濕同時出現</strong> — 低於 10°C 時如果介質還是濕的，爛根速度加倍</li>
+    <li><strong>夏季強迫遮陰</strong> — 搬進室內或放在遮陰處，光合作用不足，塊莖停止膨大甚至萎縮</li>
+    <li><strong>剛換盆就大量澆水</strong> — 換盆傷根後立刻給水，傷口還沒癒合就進水，直接感染腐爛</li>
+  </ol>
+  <blockquote class="bquote">
+    反過來看：氣溫涼了就控水、排水要快、冬天移到最多日照的位置、換盆後等一週再澆第一次水。
+  </blockquote>
+
+  <hr class="divider" />
+
+  <!-- III. 我的植物成長歷程 -->
+  <h2 class="sec-h2" id="journal">三、我的植物成長歷程</h2>
+
+  <h3 class="sec-h3">2026 / 04 / 23 — 入手 + 立刻換盆</h3>
+  <p class="para">入手時用的是保水性極強的泥炭土為主的介質，評估後決定立刻換盆。</p>
+
+  <figure class="obs-fig">
+    <img src="https://i.ibb.co/FqkdTRtg/a09a0546131d.jpg" alt="溫莎瓶幹換盆前" loading="lazy" />
+    <figcaption class="img-cap">換盆前 — 原介質（泥炭為主）</figcaption>
+  </figure>
+  <figure class="obs-fig">
+    <img src="https://i.ibb.co/PzznxDwn/e0b4a5d61568.jpg" alt="溫莎瓶幹根系" loading="lazy" />
+    <figcaption class="img-cap">根系狀況 — 典型鬚根，向四面擴散</figcaption>
+  </figure>
+
+  <p class="para"><strong>換盆介質配比：</strong></p>
+  <ul class="mix-list">
+    <li>預混介質 60%（7:2:1）</li>
+    <li>桐生砂 30%（增重、透氣）</li>
+    <li>有機質（蚯蚓糞）10%</li>
+    <li>鈣粉 3–5%（強化防禦）</li>
+  </ul>
+  <p class="para">目標：讓葉子長小一點，介質比原本更透水。換盆後等一週再給第一次水。</p>
+
+  <hr class="divider" />
+
+  <!-- IV. 突發狀況備忘錄 -->
+  <h2 class="sec-h2" id="incidents">四、突發狀況備忘錄</h2>
+
+  <table class="log-table">
+    <thead>
+      <tr><th>時間</th><th>發生什麼</th><th>處理方式</th><th>結果</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="4" style="text-align:center; color: var(--ink-faded); font-style: italic; font-size: 13px; padding: 20px 10px;">目前無紀錄</td>
+      </tr>
+    </tbody>
+  </table>
+
 </article>
 
-<footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>MMXXVI</span></div></footer>
+<footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>最後更新 2026-05-25</span></div></footer>
 </body>
 </html>
