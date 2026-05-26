@@ -37,21 +37,50 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 article { max-width: 760px; margin: 0 auto; padding: 48px 40px 60px; }
 .article-meta { font-family: var(--mono); font-size: 11px; color: var(--ink-faded); margin-bottom: 8px; display: flex; gap: 16px; }
 .plant-name { font-family: var(--display); font-size: 52px; font-weight: 400; line-height: 1.05; color: var(--moss-deep); margin: 8px 0 4px; }
-.sci-name { font-family: var(--display); font-style: italic; font-size: 21px; color: var(--ink-soft); margin-bottom: 16px; }
-.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+.sci-name { font-family: var(--display); font-style: italic; font-size: 21px; color: var(--ink-soft); margin-bottom: 4px; }
+.sci-syn { font-family: var(--display); font-style: italic; font-size: 15px; color: var(--ink-faded); margin-bottom: 16px; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
 .tag { font-family: var(--display-sc); font-size: 10px; letter-spacing: 0.2em; color: var(--ink-faded); border: 1px solid var(--rule); padding: 2px 10px; }
 .cover-wrap { margin: 0 0 32px; }
 .cover-img { width: 100%; max-height: 480px; object-fit: cover; border: 1px solid rgba(60,45,20,0.55); outline: 4px solid var(--paper); outline-offset: -7px; filter: sepia(0.15) contrast(0.96) saturate(0.9); display: block; }
-.sec-h2 { font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--moss-deep); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 36px 0 14px; }
-.sec-h3 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 18px; color: var(--rust); margin: 28px 0 8px; }
-.para { font-size: 16px; line-height: 1.85; color: var(--ink); text-align: justify; margin: 12px 0; }
+
+/* TOC */
+.toc-box { border: 1px solid var(--rule); background: var(--paper-light); padding: 18px 22px; margin-bottom: 40px; }
+.toc-title { font-family: var(--display-sc); font-size: 11px; letter-spacing: 0.22em; color: var(--ink-faded); margin-bottom: 12px; }
+.toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.toc-list li a { font-family: var(--display); font-size: 17px; color: var(--ink-soft); text-decoration: none; display: flex; align-items: baseline; gap: 8px; }
+.toc-list li a:hover { color: var(--moss-deep); }
+.toc-list li a .toc-num { font-family: var(--mono); font-size: 11px; color: var(--rule); }
+
+/* Sections */
+.sec-h2 { font-family: var(--display); font-weight: 400; font-size: 29px; color: var(--moss-deep); border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 44px 0 14px; scroll-margin-top: 24px; }
+.sec-h3 { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 21px; color: var(--rust); margin: 28px 0 8px; }
+.para { font-size: 18.5px; line-height: 1.9; color: var(--ink); text-align: justify; margin: 14px 0; }
 .blist { margin: 10px 0; padding-left: 22px; }
-.blist li { font-size: 15px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 4px; }
+.blist li { font-size: 17.5px; line-height: 1.9; color: var(--ink-soft); margin-bottom: 8px; }
+.blist li strong { color: var(--ink); }
 .obs-fig { margin: 20px 0; }
 .obs-fig img { width: 100%; max-height: 65vh; object-fit: contain; display: block; border: 1px solid rgba(60,45,20,0.45); filter: sepia(0.12) contrast(0.96); }
-.img-cap { text-align: center; font-family: var(--display); font-style: italic; font-size: 12px; color: var(--ink-faded); margin-top: 6px; }
-.divider { border: none; border-top: 1px solid var(--rule); margin: 24px 0; }
-.bquote { border-left: 3px double var(--rule); margin: 18px 0; padding: 12px 18px; background: var(--paper-light); font-style: italic; color: var(--ink-soft); }
+.img-cap { text-align: center; font-family: var(--display); font-style: italic; font-size: 14px; color: var(--ink-faded); margin-top: 6px; }
+.divider { border: none; border-top: 1px solid var(--rule); margin: 32px 0; }
+.bquote { border-left: 3px double var(--rule); margin: 18px 0; padding: 14px 20px; background: var(--paper-light); font-style: italic; color: var(--ink-soft); font-size: 17px; line-height: 1.85; }
+.bquote strong { font-style: normal; color: var(--ink); }
+
+/* Rainfall table */
+.data-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; }
+.data-table th { font-family: var(--display-sc); font-size: 12px; letter-spacing: 0.18em; color: var(--ink-faded); border-bottom: 1px solid var(--rule); padding: 6px 10px 8px; text-align: left; }
+.data-table td { border-bottom: 1px solid rgba(138,122,92,0.3); padding: 9px 10px; color: var(--ink-soft); line-height: 1.65; }
+.data-table tr:last-child td { border-bottom: none; }
+
+/* Incident log table */
+.log-table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 16px; }
+.log-table th { font-family: var(--display-sc); font-size: 12px; letter-spacing: 0.18em; color: var(--ink-faded); border-bottom: 1px solid var(--rule); padding: 6px 10px 8px; text-align: left; }
+.log-table td { border-bottom: 1px solid rgba(138,122,92,0.3); padding: 9px 10px; color: var(--ink-soft); line-height: 1.65; vertical-align: top; }
+.log-table tr:last-child td { border-bottom: none; }
+
+/* Mix ratio list */
+.mix-list { margin: 10px 0; padding-left: 22px; }
+.mix-list li { line-height: 1.85; color: var(--ink-soft); margin-bottom: 4px; font-family: var(--mono); font-size: 15px; }
 </style>
 </head>
 <body>
@@ -61,25 +90,146 @@ article { max-width: 760px; margin: 0 auto; padding: 48px 40px 60px; }
 </header>
 
 <article>
-  <div class="article-meta"><span>2026 / 04 / 26</span><span>🌿 良好</span></div>
+  <div class="article-meta">
+    <span>入手 2025 / 01</span>
+    <span>🌿 生長旺盛</span>
+    <span>台北北部・頂樓</span>
+  </div>
   <h1 class="plant-name">羽葉沒藥</h1>
   <div class="sci-name"><em>Commiphora monstruosa</em></div>
-  <div class="tags"></div>
-  
-  <h2 class="sec-h2">📅 2026/04/26</h2>
-<figure class="obs-fig"><img src="https://i.ibb.co/TDsHvTV5/86006996862e.jpg" alt="" loading="lazy" /></figure>
-<figure class="obs-fig"><img src="https://i.ibb.co/bgx9sqrX/212a51ffc802.jpg" alt="" loading="lazy" /></figure>
-<figure class="obs-fig"><img src="https://i.ibb.co/RGkKgYRk/8ddcf34878dc.jpg" alt="" loading="lazy" /></figure>
-<p class="para">一年未換盆，順便換盆並檢查根系。根系尚可但無白根。原介質太貧瘠加上施肥不勤導致長勢差，希望換介質後好轉。
+  <div class="sci-syn">（異名：<em>Operculicarya monstruosa</em>）</div>
+  <div class="tags">
+    <span class="tag">橄欖科</span>
+    <span class="tag">落葉性</span>
+    <span class="tag">馬達加斯加</span>
+    <span class="tag">全日照</span>
+  </div>
 
-介質材料比例：
-單純細顆粒 50%、桐生砂 30%、活性碳 15%、鈣粉 5%
+  <!-- TOC -->
+  <nav class="toc-box" aria-label="段落索引">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#habitat"><span class="toc-num">I.</span> 原產地的生活模式</a></li>
+      <li><a href="#kill"><span class="toc-num">II.</span> 怎麼把它養死</a></li>
+      <li><a href="#journal"><span class="toc-num">III.</span> 我的植物成長歷程</a></li>
+      <li><a href="#incidents"><span class="toc-num">IV.</span> 突發狀況備忘錄</a></li>
+    </ul>
+  </nav>
 
-設計邏輯：高透氣與石生模擬——排除赤玉土，完全依靠礦物間隙通氣；鈣粉強化細弱枝幹的木質化速度。
-防禦目標：防止休眠期因環境濕度過高導致的「塊根心腐」。</p>
-<hr class="divider" />
+  <!-- I. 原產地的生活模式 -->
+  <h2 class="sec-h2" id="habitat">一、原產地的生活模式</h2>
+  <p class="para"><strong>產地</strong>：馬達加斯加，乾燥灌叢與礫石地帶。屬橄欖科（Burseraceae），部分分類系統已改置於 <em>Operculicarya</em> 屬。</p>
+
+  <h3 class="sec-h3">日照</h3>
+  <p class="para">全年強烈直射日照，耐曬性極強。台灣北部夏季日照可充分對應，冬季日照不足時生長幾乎停止。</p>
+
+  <h3 class="sec-h3">雨量（具象化）</h3>
+  <p class="para">馬達加斯加北部屬<strong>熱帶季風氣候</strong>，雨量極度集中：</p>
+
+  <table class="data-table">
+    <thead>
+      <tr><th>季節</th><th>月份（南半球）</th><th>雨量</th><th>具象化</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>雨季</td>
+        <td>11 月 – 4 月</td>
+        <td>每月 100–250 mm</td>
+        <td>相當於每個月往盆裡倒 <strong>10–25 杯水</strong>（200 ml / 杯）</td>
+      </tr>
+      <tr>
+        <td>乾季</td>
+        <td>5 月 – 10 月</td>
+        <td>每月幾乎 0 mm</td>
+        <td><strong>完全不下雨</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote class="bquote">
+    <strong>台灣養護邏輯：依氣溫決定，不看月份。</strong><br>
+    低於 15°C 開始大幅減水；低於 10°C 停水。落葉是正常休眠訊號，不是生病。
+  </blockquote>
+
+  <h3 class="sec-h3">根系特性</h3>
+  <p class="para">這株植物最特別的地方：<strong>粗壯的地下根系</strong>。有明顯、可見的粗根向外伸展，粗壯的橫向根群鑽入礫石縫隙固著與吸收水分。</p>
+  <p class="para">真正的儲水器官仍是<strong>膨大的莖基（caudex）</strong>，根的功能主要是固著與延伸吸水範圍。</p>
+  <p class="para">選盆建議：<strong>寬淺盆 + 極度透氣介質</strong>，給根系橫向空間；排水必須快，積水即腐。</p>
+
+  <h3 class="sec-h3">外觀特徵</h3>
+  <ul class="blist">
+    <li>樹皮會<strong>自然剝落</strong>，呈銅色、灰色、褐色交雜，是重要的觀賞亮點</li>
+    <li><strong>落葉性</strong>：乾季或氣溫下降時自然落葉，春季回暖後再發芽</li>
+    <li>葉為<strong>羽狀複葉</strong>（pinnate），小葉深綠，葉緣略帶波浪</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <!-- II. 怎麼把它養死 -->
+  <h2 class="sec-h2" id="kill">二、怎麼把它養死</h2>
+  <p class="para">以下任何一條都能有效殺死這株植物：</p>
+  <ol class="blist">
+    <li><strong>落葉期繼續大量澆水</strong> — 落葉是休眠訊號，此時根系幾乎不吸水，積水直接從粗根開始腐爛</li>
+    <li><strong>介質保水性過高</strong> — 純泥炭或排水差的介質，根群缺氧、塊根心腐</li>
+    <li><strong>低溫 + 潮濕同時出現</strong> — 低於 10°C 時介質還是濕的，爛根速度加倍</li>
+    <li><strong>長期介質貧瘠不施肥</strong> — 養分不足導致生長停滯、無白根、塊根無法膨大（這株曾發生過）</li>
+    <li><strong>夏季強迫遮陰</strong> — 光合不足，枝條細弱、生長量大幅下降</li>
+  </ol>
+  <blockquote class="bquote">
+    反過來看：氣溫降了就停水、介質要極度透氣、生長期適當補肥、全日照位置不妥協。
+  </blockquote>
+
+  <hr class="divider" />
+
+  <!-- III. 我的植物成長歷程 -->
+  <h2 class="sec-h2" id="journal">三、我的植物成長歷程</h2>
+
+  <h3 class="sec-h3">2026 / 04 / 26 — 換盆（一年未換）</h3>
+  <p class="para">一年未換盆，趁機檢查根系。<strong>根系狀況</strong>：尚可，但無白根——代表換盆前生長動能偏低，推測原因為介質太貧瘠加上施肥不勤。</p>
+
+  <figure class="obs-fig">
+    <img src="https://i.ibb.co/TDsHvTV5/86006996862e.jpg" alt="羽葉沒藥換盆紀錄 01" loading="lazy" />
+  </figure>
+  <figure class="obs-fig">
+    <img src="https://i.ibb.co/bgx9sqrX/212a51ffc802.jpg" alt="羽葉沒藥換盆紀錄 02" loading="lazy" />
+  </figure>
+  <figure class="obs-fig">
+    <img src="https://i.ibb.co/RGkKgYRk/8ddcf34878dc.jpg" alt="羽葉沒藥換盆紀錄 03" loading="lazy" />
+    <figcaption class="img-cap">2026 / 04 / 26 — 換盆前根系與換盆後介質</figcaption>
+  </figure>
+
+  <p class="para"><strong>換盆介質配比：</strong></p>
+  <ul class="mix-list">
+    <li>細顆粒  50%</li>
+    <li>桐生砂  30%（透氣、配重）</li>
+    <li>活性碳  15%（防腐、除濕氣）</li>
+    <li>鈣粉     5%（強化木質化速度）</li>
+  </ul>
+  <p class="para"><strong>設計邏輯</strong>：高透氣 + 石生環境模擬——完全排除赤玉土，依靠礦物顆粒間隙通氣；鈣粉加速細弱枝幹木質化。防禦目標：防止休眠期因環境濕度過高導致的塊根心腐。</p>
+
+  <hr class="divider" />
+
+  <h3 class="sec-h3">2026 / 05（目前）— 生長旺盛</h3>
+  <p class="para">換盆後順利發芽，目前已起床，葉片展開，生長狀態良好。</p>
+
+  <hr class="divider" />
+
+  <!-- IV. 突發狀況備忘錄 -->
+  <h2 class="sec-h2" id="incidents">四、突發狀況備忘錄</h2>
+
+  <table class="log-table">
+    <thead>
+      <tr><th>時間</th><th>發生什麼</th><th>處理方式</th><th>結果</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="4" style="text-align:center; color: var(--ink-faded); font-style: italic; font-size: 13px; padding: 20px 10px;">目前無紀錄</td>
+      </tr>
+    </tbody>
+  </table>
+
 </article>
 
-<footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>MMXXVI</span></div></footer>
+<footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>最後更新 2026-05-26</span></div></footer>
 </body>
 </html>
