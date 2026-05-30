@@ -54,6 +54,19 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 .filter-btn:hover { color: var(--ink); border-color: var(--ink-soft); }
 .filter-btn.active { background: var(--moss-deep); color: var(--paper-light); border-color: var(--moss-deep); }
 .card.hidden { display: none; }
+
+@media (max-width: 768px) {
+  .site-header { padding: 16px; flex-wrap: wrap; gap: 8px; }
+  .page-header { padding: 0 16px 20px; margin-top: 24px; }
+  .page-title { font-size: 26px; }
+  .filter-bar { padding: 0 16px; margin-top: 16px; }
+  .grid { padding: 0 16px; margin-top: 20px; margin-bottom: 40px;
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .card-cover { height: 130px; }
+  .card-body { padding: 12px 14px; }
+  .card-name { font-size: 17px; }
+  .footer-inner { padding: 16px; flex-direction: column; gap: 4px; text-align: center; }
+}
 </style>
 </head>
 <body>

@@ -103,3 +103,61 @@ body {
 }
 
 button { font-family: inherit; }
+
+/* ─── Mobile responsive ─── */
+@media (max-width: 768px) {
+
+  /* Shared header/footer padding reduction */
+  .site-header,
+  .footer-inner,
+  .page-header,
+  .filter-bar,
+  .grid {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Header layout */
+  .site-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Grid: min card width smaller so 2 cols fit on phone */
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  .card-cover {
+    height: 140px !important;
+  }
+
+  .card-name {
+    font-size: 18px !important;
+  }
+
+  /* Post page article area — override React inline styles */
+  article {
+    padding: 32px 16px 40px !important;
+  }
+
+  /* Post header */
+  header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Large h1 in post pages */
+  h1 {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Meta grid: 1 col on small phone */
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
