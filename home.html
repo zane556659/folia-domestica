@@ -42,6 +42,8 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 .card:hover { transform: translateY(-2px); }
 .card-cover { height: 200px; background-size: cover; background-position: center; filter: sepia(0.15) contrast(0.96); border-bottom: 1px solid var(--rule); }
 .card-cover--empty { background: var(--paper); }
+.card-cover--icon { height: 200px; display: grid; place-items: center; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.card-icon { width: 128px; height: 128px; object-fit: contain; image-rendering: pixelated; }
 .card-body { padding: 18px 20px; }
 .card-date { font-family: var(--mono); font-size: 10px; color: var(--ink-faded); margin-bottom: 6px; }
 .card-name { font-family: var(--display); font-size: 24px; color: var(--moss-deep); line-height: 1.2; }
@@ -63,6 +65,8 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
   .grid { padding: 0 16px; margin-top: 20px; margin-bottom: 40px;
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
   .card-cover { height: 130px; }
+  .card-cover--icon { height: 130px; }
+  .card-icon { width: 96px; height: 96px; }
   .card-body { padding: 12px 14px; }
   .card-name { font-size: 17px; }
   .footer-inner { padding: 16px; flex-direction: column; gap: 4px; text-align: center; }
@@ -88,6 +92,16 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 </div>
 
 <div class="grid">
+<a class="card" href="pachypodium-brevicaule.html" data-tags="塊根">
+  <div class="card-cover--icon"><img class="card-icon" src="images/pachypodium-brevicaule/ebisu-icon-64.png" alt="惠比須笑像素 icon"></div>
+  <div class="card-body">
+    <div class="card-date">2026 / 09 / 14</div>
+    <div class="card-name">惠比須笑</div>
+    <div class="card-sci"><em>Pachypodium brevicaule</em></div>
+    <div class="card-tags"><span class="card-tag">塊根</span></div>
+    <div class="card-status">🌿 觀察中</div>
+  </div>
+</a>
 <a class="card" href="tephrocactus-geometricus.html" data-tags="仙人掌">
   <div class="card-cover" style="background-image:url('images/tephrocactus-geometricus/2026-05-30.jpg')"></div>
   <div class="card-body">
