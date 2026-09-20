@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "slug": "pachypodium-brevicaule",
+  "identity": {
+    "display_name": "惠比須笑",
+    "scientific_name": "Pachypodium brevicaule Baker",
+    "aliases": ["惠比須笑", "Pachypodium brevicaule", "P. brevicaule"],
+    "identification_confidence": "high"
+  },
+  "facts": {
+    "native_range": "馬達加斯加中部",
+    "life_form": "塊根狀矮灌木",
+    "name_story": "屬名 Pachypodium 來自希臘文 pachys（厚）與 podion（小腳）；種小名 brevicaule 意為短莖。",
+    "local_relation": "文獻記載馬達加斯加部分地方將其視為神聖並避免擾動；不延伸為全國一致的看法。"
+  },
+  "sources": [
+    {
+      "title": "Kew — Plants of the World Online",
+      "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:80694-1/general-information",
+      "checked_on": "2026-09-20",
+      "supports": ["accepted name", "native range", "life form"]
+    },
+    {
+      "title": "Rapanarivo, Pachypodium (Apocynaceae)",
+      "url": "https://edepot.wur.nl/195240",
+      "checked_on": "2026-09-20",
+      "supports": ["local names", "habitat"]
+    },
+    {
+      "title": "IUCN/SSC — Global Cactus and Succulent Plant Conservation Action Plan",
+      "url": "https://succulentresearch.org/wp-content/uploads/2016/08/ActionPlan.pdf",
+      "checked_on": "2026-09-20",
+      "supports": ["local relation"]
+    }
+  ],
+  "observations": [
+    {
+      "date": "2026-09-14",
+      "source_record": "000_Agent/plant-inbox/2026-09-14/1549024930706882751/record.json",
+      "status": "完整",
+      "summary": "淋雨後仍帶葉；這是當期觀察，不推論長期淋雨安全。"
+    }
+  ],
+  "publication": {
+    "website": {"status": "draft-local", "path": "pachypodium-brevicaule.html"},
+    "instagram": {"status": "not-requested"}
+  }
+}
