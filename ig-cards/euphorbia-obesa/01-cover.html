@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Cover — Botanical</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.card {
+  width: 1080px;
+  height: 1350px;
+  background-color: #f1e9d6;
+  background-image:
+    radial-gradient(ellipse at 18% 8%,  rgba(120,90,50,0.09) 0%, transparent 58%),
+    radial-gradient(ellipse at 82% 92%, rgba(80,60,30,0.07)  0%, transparent 52%),
+    radial-gradient(circle at 30% 65%,  rgba(60,40,20,0.04)  0%, transparent 38%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 舊紙斑點 foxing */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 8%  18%, rgba(140,90,30,0.14) 0%, transparent 0.9%),
+    radial-gradient(circle at 92% 12%, rgba(120,70,20,0.12) 0%, transparent 0.7%),
+    radial-gradient(circle at 78% 85%, rgba(140,90,30,0.13) 0%, transparent 0.6%),
+    radial-gradient(circle at 22% 80%, rgba(120,80,30,0.11) 0%, transparent 0.8%);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* ── Top label ─────────────────── */
+.top-label {
+  flex-shrink: 0;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 24px;
+  letter-spacing: 0.28em;
+  color: #7a6a4f;
+  text-align: center;
+  padding: 28px 80px 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.band {
+  flex-shrink: 0;
+  border-top: 1px solid #8a7a5c;
+  border-bottom: 1px solid #8a7a5c;
+  height: 5px;
+}
+
+/* ── Illustration area ─────────── */
+.illus-wrap {
+  flex: 1;
+  overflow: hidden;
+  margin: 28px 80px 0;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(60,45,20,0.45);
+  outline: 6px solid #f1e9d6;
+  outline-offset: -10px;
+}
+
+.illus-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: sepia(0.1) contrast(0.97) saturate(0.93);
+}
+
+/* ── Name plate ───────────────── */
+.name-plate {
+  flex-shrink: 0;
+  padding: 0 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.name-plate .dbl-rule {
+  border-top: 1px solid #8a7a5c;
+  border-bottom: 1px solid #8a7a5c;
+  height: 5px;
+  margin: 20px 0 22px;
+}
+
+.plant-name {
+  font-family: 'IM Fell English', serif;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1.0;
+  color: #2f3a22;
+  margin-bottom: 10px;
+}
+
+.sci-name {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 38px;
+  color: #4a3f2c;
+  margin-bottom: 12px;
+}
+
+.origin {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 23px;
+  letter-spacing: 0.18em;
+  color: #7a6a4f;
+  margin-bottom: 28px;
+}
+
+/* ── Handle ──────────────────── */
+.handle {
+  position: absolute;
+  bottom: 28px;
+  right: 80px;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #7a6a4f;
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top-label">家中花草志 · Folia Domestica</div>
+  <div class="band"></div>
+
+  <div class="illus-wrap">
+    <img src="euphorbia-obesa-botanical-plate-v1.png" alt="布紋球植物學圖版" />
+  </div>
+
+  <div class="name-plate">
+    <div class="dbl-rule"></div>
+    <h1 class="plant-name">布紋球</h1>
+    <p class="sci-name"><em>Euphorbia obesa</em></p>
+    <p class="origin">南非東開普 · 卡魯</p>
+  </div>
+
+  <span class="handle">@ziv.plant</span>
+</div>
+</body>
+</html>

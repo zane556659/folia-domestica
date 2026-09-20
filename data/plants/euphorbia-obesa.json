@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "slug": "euphorbia-obesa",
+  "identity": {
+    "display_name": "布紋球",
+    "scientific_name": "Euphorbia obesa Hook.f.",
+    "aliases": ["布紋球", "晃玉", "Euphorbia obesa"],
+    "identification_confidence": "high"
+  },
+  "facts": {
+    "native_range": "南非南中部開普省；大卡魯地區",
+    "life_form": "多肉亞灌木，主要生於沙漠或乾燥灌叢生物群系",
+    "visible_features": ["成熟株短圓球至矮柱狀", "八條寬稜由中心向外放射", "稜緣具細小瘤突；本株呈鼠尾草綠、灰褐與淡紫條紋"],
+    "conservation_note": "原生地族群曾受採集與出口壓力；本文只描述來源的保育敘述，不另行推定正式紅色名錄等級。"
+  },
+  "sources": [
+    {
+      "title": "Kew — Plants of the World Online",
+      "url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A347540-1/general-information",
+      "checked_on": "2026-09-20",
+      "supports": ["accepted name", "native range", "life form"]
+    },
+    {
+      "title": "United States Botanic Garden — Baseball plant",
+      "url": "https://www.usbg.gov/rare-and-endangered-plant-spotlights",
+      "checked_on": "2026-09-20",
+      "supports": ["Great Karoo range", "round ribbed morphology", "collection pressure context"]
+    }
+  ],
+  "observations": [
+    {
+      "date": "2026-09-20",
+      "source_record": "000_Agent/plant-inbox/2026-09-20/1551120493203955752/record.json",
+      "status": "完整",
+      "summary": "在家至少一年；目前生長順利，且曾成功結種子。"
+    }
+  ],
+  "publication": {
+    "website": {"status": "draft-local", "path": "euphorbia-obesa.html"},
+    "instagram": {"status": "preview-ready"}
+  }
+}

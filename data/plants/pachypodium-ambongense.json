@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "slug": "pachypodium-ambongense",
+  "identity": {
+    "display_name": "安博棒槌",
+    "scientific_name": "Pachypodium ambongense Poiss.",
+    "aliases": [
+      "安博棒槌",
+      "Pachypodium ambongense",
+      "P. ambongense"
+    ],
+    "identification_confidence": "high"
+  },
+  "facts": {
+    "native_range": "馬達加斯加西北部（Ambongo）。",
+    "life_form": "半多肉灌木，主要生於沙漠或乾燥灌叢生物群系。",
+    "visible_features": [
+      "本株照片可見短而膨大的灰綠色莖幹",
+      "莖上可見成對、尖錐形刺",
+      "新生長頂端有狹長綠葉叢"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Kew — Plants of the World Online",
+      "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:80690-1/general-information",
+      "checked_on": "2026-09-20",
+      "supports": [
+        "accepted name",
+        "native range",
+        "life form"
+      ]
+    },
+    {
+      "title": "CITES Checklist of Aloe and Pachypodium",
+      "url": "https://www.kew.org/sites/default/files/2019-02/CITES_Aloe_%26_Pachypodium_Checklist.pdf",
+      "checked_on": "2026-09-20",
+      "supports": [
+        "current binomial",
+        "Madagascar Ambongo distribution"
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "date": "2026-09-20",
+      "source_record": "000_Agent\\plant-inbox\\2026-09-20\\1551159841328861254\\record.json",
+      "status": "完整",
+      "summary": "植物：安博棒槌\n20260920定期紀錄"
+    }
+  ],
+  "media": {
+    "feature_image": "images/pachypodium-ambongense/pachypodium-ambongense-botanical-plate-v1.png",
+    "observation_images": [
+      {
+        "date": "2026-09-20",
+        "path": "images/pachypodium-ambongense/2026-09-20.jpg"
+      }
+    ]
+  },
+  "publication": {
+    "website": {
+      "status": "draft-local",
+      "path": "pachypodium-ambongense.html"
+    },
+    "instagram": {
+      "status": "not-requested"
+    }
+  }
+}

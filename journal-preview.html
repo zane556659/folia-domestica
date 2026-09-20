@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>家中花草志｜日誌優先預覽</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f4efe2;--ink:#29342a;--muted:#687267;--moss:#294839;--line:#cdd2c6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 'Noto Serif TC',serif}.shell{width:min(1080px,calc(100% - 40px));margin:auto}header{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line)}a{color:inherit}.brand{font:23px 'EB Garamond',serif;text-decoration:none;color:var(--moss);letter-spacing:.1em}.eyebrow{font:12px/1.4 monospace;letter-spacing:.12em;color:var(--muted)}.hero{display:grid;grid-template-columns:1fr 1.08fr;gap:70px;align-items:center;padding:70px 0}.hero h1{font:52px/1.2 'Noto Serif TC',serif;font-weight:400;color:var(--moss);margin:12px 0 20px}.hero p{color:var(--muted)}.hero img{display:block;width:100%;max-height:620px;object-fit:contain;background:#ece5d6}.section{border-top:1px solid var(--line);padding:55px 0}.section h2{font:32px 'Noto Serif TC',serif;font-weight:400;color:var(--moss);margin:0 0 6px}.timeline{display:grid;gap:24px;margin-top:28px}.entry{display:grid;grid-template-columns:210px 1fr;gap:28px;padding-bottom:25px;border-bottom:1px solid var(--line)}.entry img{width:210px;height:150px;object-fit:cover;background:#e7e2d7}.date{font:12px monospace;color:var(--muted)}.name{font-size:24px;color:var(--moss);margin:4px 0}.sci{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted)}.empty{color:var(--muted)}footer{padding:28px 0;color:var(--muted);font:11px monospace;letter-spacing:.15em}@media(max-width:720px){.shell{width:min(100% - 28px,600px)}.hero{grid-template-columns:1fr;gap:28px;padding:45px 0}.hero h1{font-size:40px}.entry{grid-template-columns:1fr;gap:14px}.entry img{width:100%;height:auto;aspect-ratio:1.5}}
+</style>
+<header class="shell"><a class="brand" href="journal-preview.html">家中花草志</a><span class="eyebrow">JOURNAL-FIRST · LOCAL PREVIEW</span></header>
+<main class="shell"><section class="hero" id="hero"><div><p class="eyebrow">A FIELD COMPANION OF HOUSEPLANTS</p><h1>一些植物，<br>一些慢慢的日子。</h1><p>從一片新葉，到一段休眠。這裡用每一次觀察，慢慢長成植物的時間軸。</p></div></section><section class="section"><h2>最近的觀察</h2><p class="eyebrow">NOTES FROM THE GARDEN</p><div class="timeline" id="timeline"><p class="empty">正在讀取植物資料……</p></div></section></main><footer class="shell">—— FOLIA DOMESTICA · LOCAL DRAFT ——</footer>
+<script>
+const slugs=['pachypodium-ambongense','euphorbia-obesa','pachypodium-brevicaule'];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+Promise.all(slugs.map(s=>fetch(`data/plants/${s}.json`).then(r=>r.json()))).then(plants=>{
+ const entries=plants.flatMap(p=>p.observations.map(o=>({p,o}))).sort((a,b)=>b.o.date.localeCompare(a.o.date));
+ const latest=entries[0]; const feature=latest.p.media?.feature_image;
+ if(feature)document.querySelector('#hero').insertAdjacentHTML('beforeend',`<img src="${esc(feature)}" alt="${esc(latest.p.identity.display_name)}植物圖版">`);
+ document.querySelector('#timeline').innerHTML=entries.map(({p,o})=>{const image=p.media?.observation_images?.find(x=>x.date===o.date)?.path;return `<article class="entry">${image?`<img src="${esc(image)}" alt="${esc(p.identity.display_name)} ${esc(o.date)} 觀察">`:'<div></div>'}<div><div class="date">${esc(o.date)} · ${esc(o.status)}</div><div class="name">${esc(p.identity.display_name)}</div><div class="sci">${esc(p.identity.scientific_name)}</div><p>${esc(o.summary)}</p></div></article>`}).join('');
+}).catch(()=>document.querySelector('#timeline').innerHTML='<p class="empty">讀取資料失敗；請從網站根目錄啟動本機伺服器後再預覽。</p>');
+</script>
+</html>

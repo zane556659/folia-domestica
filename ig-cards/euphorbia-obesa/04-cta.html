@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>CTA — Botanical</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.card {
+  width: 1080px;
+  height: 1350px;
+  background-color: #f1e9d6;
+  background-image:
+    radial-gradient(ellipse at 20% 12%, rgba(120,90,50,0.09) 0%, transparent 58%),
+    radial-gradient(ellipse at 80% 88%, rgba(80,60,30,0.07) 0%, transparent 52%),
+    radial-gradient(circle at 50% 50%, rgba(60,40,20,0.03) 0%, transparent 45%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 8%  18%, rgba(140,90,30,0.13) 0%, transparent 0.9%),
+    radial-gradient(circle at 92% 14%, rgba(120,70,20,0.11) 0%, transparent 0.7%),
+    radial-gradient(circle at 76% 84%, rgba(140,90,30,0.12) 0%, transparent 0.6%),
+    radial-gradient(circle at 24% 78%, rgba(120,80,30,0.10) 0%, transparent 0.8%);
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+/* ── Decorative frame ────────── */
+.outer-frame {
+  position: absolute;
+  inset: 48px;
+  border: 1px solid #8a7a5c;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.inner-frame {
+  position: absolute;
+  inset: 56px;
+  border: 1px solid rgba(138,122,92,0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Corner ornaments ────────── */
+.corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  z-index: 2;
+}
+.corner-tl { top: 40px;  left: 40px;  border-top: 2px solid #8a7a5c; border-left: 2px solid #8a7a5c; }
+.corner-tr { top: 40px;  right: 40px; border-top: 2px solid #8a7a5c; border-right: 2px solid #8a7a5c; }
+.corner-bl { bottom: 40px; left: 40px;  border-bottom: 2px solid #8a7a5c; border-left: 2px solid #8a7a5c; }
+.corner-br { bottom: 40px; right: 40px; border-bottom: 2px solid #8a7a5c; border-right: 2px solid #8a7a5c; }
+
+/* ── Content ──────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.fleuron {
+  font-family: 'IM Fell English', serif;
+  font-size: 44px;
+  color: #8a7a5c;
+  letter-spacing: 0.5em;
+  margin-bottom: 40px;
+}
+
+.dbl-rule {
+  width: 300px;
+  border-top: 1px solid #8a7a5c;
+  border-bottom: 1px solid #8a7a5c;
+  height: 5px;
+  margin-bottom: 48px;
+}
+
+.cta-main {
+  font-family: 'IM Fell English', serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: #2f3a22;
+  line-height: 1.15;
+  margin-bottom: 28px;
+}
+
+.cta-sub {
+  font-family: 'EB Garamond', serif;
+  font-size: 42px;
+  color: #4a3f2c;
+  line-height: 1.65;
+  margin-bottom: 52px;
+}
+
+.handle-badge {
+  display: inline-block;
+  border: 1.5px solid #2f3a22;
+  color: #2f3a22;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 34px;
+  letter-spacing: 0.18em;
+  padding: 16px 48px;
+}
+
+/* ── Bottom actions ───────────── */
+.bottom-actions {
+  position: absolute;
+  bottom: 72px;
+  left: 90px;
+  right: 90px;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  align-items: center;
+  z-index: 2;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-icon svg {
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: #4a3f2c;
+  stroke-width: 1.5;
+}
+
+.action-text {
+  font-family: 'EB Garamond', serif;
+  font-size: 30px;
+  color: #4a3f2c;
+}
+
+/* ── Series label ────────────── */
+.series-label {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'IM Fell English SC', serif;
+  font-size: 20px;
+  letter-spacing: 0.28em;
+  color: #7a6a4f;
+  white-space: nowrap;
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="outer-frame"></div>
+  <div class="inner-frame"></div>
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <span class="series-label">家中花草志 · Folia Domestica</span>
+
+  <div class="content">
+    <div class="fleuron">· · ·</div>
+    <div class="dbl-rule"></div>
+    <h2 class="cta-main">一顆球<br>也是一段時間</h2>
+    <p class="cta-sub">到家中花草志，繼續看它的下一筆紀錄</p>
+    <span class="handle-badge">@ziv.plant</span>
+  </div>
+
+  <div class="bottom-actions">
+    <div class="action">
+      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <span class="action-text">喜歡點愛心</span>
+    </div>
+    <div class="action">
+      <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      <span class="action-text">實用請收藏</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

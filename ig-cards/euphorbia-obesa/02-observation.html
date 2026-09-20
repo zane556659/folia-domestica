@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Content Image — Botanical</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+.card {
+  width: 1080px;
+  height: 1350px;
+  background-color: #f1e9d6;
+  background-image:
+    radial-gradient(ellipse at 15% 10%, rgba(120,90,50,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 90%, rgba(80,60,30,0.06) 0%, transparent 50%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 80px;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 6%  20%, rgba(140,90,30,0.11) 0%, transparent 0.8%),
+    radial-gradient(circle at 94% 15%, rgba(120,70,20,0.10) 0%, transparent 0.6%);
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+/* ── Top ─────────────────────── */
+.top-row {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 0 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.series-label {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 22px;
+  letter-spacing: 0.22em;
+  color: #7a6a4f;
+  white-space: nowrap;
+}
+
+.top-rule {
+  flex: 1;
+  border-top: 1px solid #8a7a5c;
+}
+
+/* ── Section title ───────────── */
+.section-title {
+  flex-shrink: 0;
+  font-family: 'IM Fell English', serif;
+  font-size: 60px;
+  font-weight: 400;
+  color: #2f3a22;
+  line-height: 1.1;
+  margin: 8px 0 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.date-label {
+  flex-shrink: 0;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: #7a6a4f;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.04em;
+}
+
+.title-rule {
+  flex-shrink: 0;
+  border: none;
+  border-top: 1px solid #8a7a5c;
+  margin: 0 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Photo ───────────────────── */
+.photo-frame {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+}
+
+.photo-frame img {
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(60,45,20,0.5);
+  outline: 7px solid #f1e9d6;
+  outline-offset: -12px;
+  filter: sepia(0.15) contrast(0.96) saturate(0.88);
+}
+
+.img-cap {
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #7a6a4f;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Text below photo ─────────── */
+.info-list {
+  flex: 1;
+  list-style: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.info-item {
+  font-family: 'EB Garamond', serif;
+  font-size: 38px;
+  line-height: 1.7;
+  color: #4a3f2c;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(138,122,92,0.25);
+  display: flex;
+  gap: 16px;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: #8a7a5c;
+  border-radius: 50%;
+  margin-top: 18px;
+}
+
+/* ── Bottom bar ──────────────── */
+.bottom-bar {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0 26px;
+  border-top: 1px solid #8a7a5c;
+  position: relative;
+  z-index: 1;
+}
+
+.handle {
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  font-size: 28px;
+  color: #7a6a4f;
+}
+
+.page-num {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 22px;
+  letter-spacing: 0.12em;
+  color: #8a7a5c;
+}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Top label -->
+  <div class="top-row">
+    <span class="series-label">家中花草志</span>
+    <div class="top-rule"></div>
+  </div>
+
+  <!-- Title -->
+  <h2 class="section-title">在我這裡<br>至少一年</h2>
+  <p class="date-label">2026 / 09 / 20</p>
+  <hr class="title-rule">
+
+  <!-- Photo -->
+  <div class="photo-frame">
+    <img src="../../images/euphorbia-obesa/2026-09-20.jpg" alt="布紋球觀察照" />
+    <p class="img-cap">今天留下的第一筆紀錄</p>
+  </div>
+
+  <!-- Info below -->
+  <ul class="info-list">
+    <li class="info-item"><span class="info-dot"></span><span>目前生長一直很順利</span></li>
+    <li class="info-item"><span class="info-dot"></span><span>也成功結過種子</span></li>
+    <li class="info-item"><span class="info-dot"></span><span>不是養護結論，只是今日觀察</span></li>
+  </ul>
+
+  <!-- Bottom -->
+  <div class="bottom-bar">
+    <span class="handle">@ziv.plant</span>
+    <span class="page-num">2 / 4</span>
+  </div>
+
+</div>
+</body>
+</html>
