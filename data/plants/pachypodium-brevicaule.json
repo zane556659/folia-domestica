@@ -4,33 +4,58 @@
   "identity": {
     "display_name": "惠比須笑",
     "scientific_name": "Pachypodium brevicaule Baker",
-    "aliases": ["惠比須笑", "Pachypodium brevicaule", "P. brevicaule"],
+    "aliases": [
+      "惠比須笑",
+      "Pachypodium brevicaule",
+      "P. brevicaule"
+    ],
     "identification_confidence": "high"
   },
   "facts": {
     "native_range": "馬達加斯加中部",
     "life_form": "塊根狀矮灌木",
     "name_story": "屬名 Pachypodium 來自希臘文 pachys（厚）與 podion（小腳）；種小名 brevicaule 意為短莖。",
-    "local_relation": "文獻記載馬達加斯加部分地方將其視為神聖並避免擾動；不延伸為全國一致的看法。"
+    "local_relation": "文獻記載馬達加斯加部分地方將其視為神聖並避免擾動；不延伸為全國一致的看法。",
+    "visible_features": [
+      "本株照片可見灰褐色、扁平膨大的塊根",
+      "拍攝當天頂端仍帶綠葉"
+    ]
   },
   "sources": [
     {
       "title": "Kew — Plants of the World Online",
       "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:80694-1/general-information",
       "checked_on": "2026-09-20",
-      "supports": ["accepted name", "native range", "life form"]
+      "supports": [
+        "accepted name",
+        "native range",
+        "life form"
+      ]
     },
     {
       "title": "Rapanarivo, Pachypodium (Apocynaceae)",
       "url": "https://edepot.wur.nl/195240",
       "checked_on": "2026-09-20",
-      "supports": ["local names", "habitat"]
+      "supports": [
+        "local names",
+        "habitat"
+      ]
     },
     {
       "title": "IUCN/SSC — Global Cactus and Succulent Plant Conservation Action Plan",
       "url": "https://succulentresearch.org/wp-content/uploads/2016/08/ActionPlan.pdf",
       "checked_on": "2026-09-20",
-      "supports": ["local relation"]
+      "supports": [
+        "local relation"
+      ]
+    },
+    {
+      "title": "University of Oxford Herbaria — Pachypodium",
+      "url": "https://herbaria.plants.ox.ac.uk/bol/plants400/Profiles/OP/Pachypodium",
+      "checked_on": "2026-09-20",
+      "supports": [
+        "genus name origin"
+      ]
     }
   ],
   "observations": [
@@ -38,11 +63,58 @@
       "date": "2026-09-14",
       "source_record": "000_Agent/plant-inbox/2026-09-14/1549024930706882751/record.json",
       "status": "完整",
-      "summary": "淋雨後仍帶葉；這是當期觀察，不推論長期淋雨安全。"
+      "summary": "這是惠比須笑原產的小朋友。\n\n當初拍照是幫它做個記錄，它淋了一段時間的雨，看起來是沒什麼問題。\n\n現在是 9 月 14 號，隨著時間過去，可能再一個月甚至兩個月，它們就會進入休眠了，到時候就要禁止淋雨了",
+      "teaser": "淋雨後仍帶葉；這是當期觀察，不推論長期淋雨安全。"
     }
   ],
   "publication": {
-    "website": {"status": "draft-local", "path": "pachypodium-brevicaule.html"},
-    "instagram": {"status": "not-requested"}
+    "website": {
+      "status": "draft-local",
+      "path": "pachypodium-brevicaule.html"
+    },
+    "instagram": {
+      "status": "not-requested"
+    }
+  },
+  "story": {
+    "sections": [
+      {
+        "heading": "名字從哪裡來",
+        "paragraphs": [
+          "屬名 Pachypodium 來自希臘文：pachys 是「厚」，podion 是「小腳」。它指向這一群植物膨厚的基部；種小名 brevicaule 則是拉丁文的「短莖」。科學名先把它的樣子說得很準：一株把身體縮到很短、很厚的植物。",
+          "中文「惠比須笑」是園藝流通中常見的名字。不過這次沒有找到能確認其最初命名者或命名理由的可靠資料，因此不把「像惠比壽神在笑」這類說法當成既定事實。"
+        ]
+      },
+      {
+        "heading": "在家鄉，它被如何看待",
+        "paragraphs": [
+          "在馬達加斯加高地，人們也有自己的稱呼：梅里納語的 Tsimondrimondry，以及貝齊廖語的 Kimondromondro。後者所指的字義，和它奇異膨起的塊莖有關。",
+          "一份多肉植物保育行動計畫記載：在馬達加斯加的部分地方，P. brevicaule 被視為神聖，居民會避開它。這不代表所有馬達加斯加人都如此看待它；但至少在某些地方，它不是可以任意取用的稀有物，而是會被留在原地的存在。"
+        ]
+      },
+      {
+        "heading": "它怎麼活",
+        "paragraphs": [
+          "惠比須笑是馬達加斯加中部的塊根狀矮灌木。它的扁平塊根與不規則輪廓，讓它看起來像一塊石頭；但這不是裝飾，而是它在岩地環境裡留下的形狀。",
+          "資料指出它與石英岩、酸性基質有關。這不會直接變成一份固定澆水表，卻提醒我們：不能只因它有塊根，就套用所有乾燥植物的養法。"
+        ]
+      },
+      {
+        "heading": "我的植物成長歷程",
+        "paragraphs": [
+          "它淋了一段時間的雨，現在仍帶著葉；目前看不出異狀。但這是這段期間的觀察，不是「惠比須笑可以一直淋雨」的結論。"
+        ]
+      }
+    ]
+  },
+  "media": {
+    "feature_image": "images/pachypodium-brevicaule/2026-09-14.jpg",
+    "observation_images": [
+      {
+        "date": "2026-09-14",
+        "source_record": "000_Agent/plant-inbox/2026-09-14/1549024930706882751/record.json",
+        "path": "images/pachypodium-brevicaule/2026-09-14.jpg"
+      }
+    ]
   }
 }

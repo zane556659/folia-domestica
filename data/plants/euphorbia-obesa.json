@@ -4,27 +4,55 @@
   "identity": {
     "display_name": "布紋球",
     "scientific_name": "Euphorbia obesa Hook.f.",
-    "aliases": ["布紋球", "晃玉", "Euphorbia obesa"],
+    "aliases": [
+      "布紋球",
+      "晃玉",
+      "Euphorbia obesa"
+    ],
     "identification_confidence": "high"
   },
   "facts": {
-    "native_range": "南非南中部開普省；大卡魯地區",
+    "native_range": "南非開普省中南部",
     "life_form": "多肉亞灌木，主要生於沙漠或乾燥灌叢生物群系",
-    "visible_features": ["成熟株短圓球至矮柱狀", "八條寬稜由中心向外放射", "稜緣具細小瘤突；本株呈鼠尾草綠、灰褐與淡紫條紋"],
-    "conservation_note": "原生地族群曾受採集與出口壓力；本文只描述來源的保育敘述，不另行推定正式紅色名錄等級。"
+    "visible_features": [
+      "本株呈短圓球狀",
+      "八條寬稜由中心向外放射",
+      "稜緣具細小瘤突；本株呈鼠尾草綠、灰褐與淡紫條紋"
+    ],
+    "conservation_note": "原生地族群曾受採集與出口壓力；本文只描述來源的保育敘述，不另行推定正式紅色名錄等級。",
+    "habitat_note": "東開普省 Graaff-Reinet 南方的大卡魯（南非植物園的棲地記載）"
   },
   "sources": [
     {
       "title": "Kew — Plants of the World Online",
       "url": "https://powo.science.kew.org/taxon/urn%3Alsid%3Aipni.org%3Anames%3A347540-1/general-information",
       "checked_on": "2026-09-20",
-      "supports": ["accepted name", "native range", "life form"]
+      "supports": [
+        "accepted name",
+        "native range",
+        "life form"
+      ]
     },
     {
       "title": "United States Botanic Garden — Baseball plant",
       "url": "https://www.usbg.gov/rare-and-endangered-plant-spotlights",
       "checked_on": "2026-09-20",
-      "supports": ["Great Karoo range", "round ribbed morphology", "collection pressure context"]
+      "supports": [
+        "Great Karoo range",
+        "round ribbed morphology",
+        "collection pressure context"
+      ]
+    },
+    {
+      "title": "SANBI — PlantZAfrica",
+      "url": "https://pza.sanbi.org/euphorbia-obesa",
+      "checked_on": "2026-09-28",
+      "supports": [
+        "habitat",
+        "morphology",
+        "local name",
+        "discovery history"
+      ]
     }
   ],
   "observations": [
@@ -32,11 +60,50 @@
       "date": "2026-09-20",
       "source_record": "000_Agent/plant-inbox/2026-09-20/1551120493203955752/record.json",
       "status": "完整",
-      "summary": "在家至少一年；目前生長順利，且曾成功結種子。"
+      "summary": "今天 9 月 20 號，我拍了這顆布紋球，它是大戟科的。\n\n特別想要幫它做記錄，是因為它在我這邊至少應該有一年了吧。目前來說都長得蠻順利的，也有成功結種子。\n\n我還順便因為這樣寫了一篇文章，文章如下，等一下會再補上。",
+      "teaser": "在家至少一年；目前生長順利，且曾成功結種子。"
     }
   ],
   "publication": {
-    "website": {"status": "draft-local", "path": "euphorbia-obesa.html"},
-    "instagram": {"status": "preview-ready"}
+    "website": {
+      "status": "draft-local",
+      "path": "euphorbia-obesa.html"
+    },
+    "instagram": {
+      "status": "preview-ready"
+    }
+  },
+  "story": {
+    "sections": [
+      {
+        "heading": "先認識這顆球",
+        "paragraphs": [
+          "布紋球的受理學名是 Euphorbia obesa。它是大戟科大戟屬的多肉亞灌木，原生於南非開普省中南部的乾燥地帶。它像仙人掌，但不是仙人掌：成熟植株把身體縮成短圓球或矮柱，稜線與條紋把每次生長留在表面。"
+        ]
+      },
+      {
+        "heading": "在它的原產地，被怎麼記住",
+        "paragraphs": [
+          "在南非，這株植物有一個 Afrikaans 常用名：Vetmensie。南非植物園資料記載，它生於東開普省 Graaff-Reinet 南方的大卡魯，頁岩碎片與矮灌木之間，灰綠與暗紫的身體把自己藏進碎石裡。地方名稱、石頭中的位置、和難以被看見的身形，是目前能查到的「它在那裡怎麼被叫、怎麼被遇見」；沒有可靠資料，我不把它延伸成不存在的民間神話。",
+          "但它也有一段被帶離原地的歷史。1897 年，Peter MacOwan 在 Graaff-Reinet 附近採得標本並送往 Kew；後來，過度採集與出口一度讓野外族群接近消失。南非植物園資料指出，它至今仍受到保護。今天在盆裡看見的這顆球，並不是和原產地無關的可愛形狀。"
+        ]
+      },
+      {
+        "heading": "它在這裡的一年",
+        "paragraphs": [
+          "這顆布紋球在我這邊至少一年。到目前為止，生長一直很順利，也成功結過種子。這不是一份把它養成標準答案的紀錄；只是先把今天的樣子、它已經待了多久，和一件確實發生過的事留住。"
+        ]
+      }
+    ]
+  },
+  "media": {
+    "feature_image": "images/euphorbia-obesa/2026-09-20.jpg",
+    "observation_images": [
+      {
+        "date": "2026-09-20",
+        "source_record": "000_Agent/plant-inbox/2026-09-20/1551120493203955752/record.json",
+        "path": "images/euphorbia-obesa/2026-09-20.jpg"
+      }
+    ]
   }
 }

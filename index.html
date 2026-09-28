@@ -15,7 +15,7 @@ Promise.all(slugs.map(s=>fetch(`data/plants/${s}.json`).then(r=>r.json()))).then
  const entries=plants.flatMap(p=>p.observations.map(o=>({p,o}))).sort((a,b)=>b.o.date.localeCompare(a.o.date));
  const latest=entries[0]; const photoFor=({p,o})=>p.media?.observation_images?.find(x=>x.source_record?x.source_record===o.source_record:x.date===o.date)?.path; const feature=photoFor(latest);
  if(feature)document.querySelector('#hero').insertAdjacentHTML('beforeend',`<img src="${esc(feature)}" alt="${esc(latest.p.identity.display_name)} ${esc(latest.o.date)} 觀察照">`);
- document.querySelector('#timeline').innerHTML=entries.map(({p,o})=>{const image=photoFor({p,o});return `<a class="entry" href="${esc(p.slug)}.html">${image?`<img src="${esc(image)}" alt="${esc(p.identity.display_name)} ${esc(o.date)} 觀察">`:'<div></div>'}<div><div class="date">${esc(o.date)} · ${esc(o.status)}</div><div class="name">${esc(p.identity.display_name)}</div><div class="sci">${esc(p.identity.scientific_name)}</div><p>${esc(o.summary)}</p></div></a>`}).join('');
+ document.querySelector('#timeline').innerHTML=entries.map(({p,o})=>{const image=photoFor({p,o});return `<a class="entry" href="${esc(p.slug)}.html">${image?`<img src="${esc(image)}" alt="${esc(p.identity.display_name)} ${esc(o.date)} 觀察">`:'<div></div>'}<div><div class="date">${esc(o.date)} · ${esc(o.status)}</div><div class="name">${esc(p.identity.display_name)}</div><div class="sci">${esc(p.identity.scientific_name)}</div><p>${esc(o.teaser||o.summary)}</p></div></a>`}).join('');
 }).catch(()=>document.querySelector('#timeline').innerHTML='<p class="empty">讀取資料失敗；請從網站根目錄啟動本機伺服器後再預覽。</p>');
 // 網站主圖使用 Ziv 的觀察照；植物圖版保留給 IG 視覺素材。
 </script>

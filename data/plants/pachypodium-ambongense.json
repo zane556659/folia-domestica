@@ -50,11 +50,12 @@
     }
   ],
   "media": {
-    "feature_image": "images/pachypodium-ambongense/pachypodium-ambongense-botanical-plate-v1.png",
+    "feature_image": "images/pachypodium-ambongense/2026-09-20.jpg",
     "observation_images": [
       {
         "date": "2026-09-20",
-        "path": "images/pachypodium-ambongense/2026-09-20.jpg"
+        "path": "images/pachypodium-ambongense/2026-09-20.jpg",
+        "source_record": "000_Agent\\plant-inbox\\2026-09-20\\1551159841328861254\\record.json"
       }
     ]
   },
@@ -66,5 +67,21 @@
     "instagram": {
       "status": "not-requested"
     }
+  },
+  "story": {
+    "sections": [
+      {
+        "heading": "在原生地",
+        "paragraphs": [
+          "安博棒槌原生於馬達加斯加西北部的 Ambongo。查證資料把它列為半多肉灌木，生於乾燥地帶。這裡只記錄來源支持的範圍，不把產地描述推成固定養護規則。"
+        ]
+      },
+      {
+        "heading": "這株目前的樣子",
+        "paragraphs": [
+          "在 2026 年 9 月 20 日的照片裡，可見短而膨大的灰綠色莖幹、成對的尖錐形刺，以及頂端的狹長綠葉。這些是這一次照片可見的狀態。"
+        ]
+      }
+    ]
   }
 }
