@@ -1,171 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-239WJ037YX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-239WJ037YX');
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>家中花草志｜植物日誌</title>
-<link rel="canonical" href="journal-preview.html" />
-<meta http-equiv="refresh" content="0; url=journal-preview.html" />
-<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #f1e9d6;
-    --paper-light: #f7f0dd;
-    --ink: #2a2419;
-    --ink-soft: #4a3f2c;
-    --ink-faded: #7a6a4f;
-    --rule: #8a7a5c;
-    --moss-deep: #2f3a22;
-    --rust: #9a4a2a;
-    --serif-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
-    --display: 'IM Fell English', 'EB Garamond', Georgia, serif;
-    --display-sc: 'IM Fell English SC', 'EB Garamond', Georgia, serif;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  body {
-    background: var(--paper);
-    background-image:
-      radial-gradient(ellipse at 20% 10%, rgba(120, 90, 50, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 90%, rgba(80, 60, 30, 0.06) 0%, transparent 55%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif-body);
-    color: var(--ink);
-    padding: 32px;
-  }
-
-  .wrap {
-    max-width: 720px;
-    width: 100%;
-  }
-
-  .label {
-    font-family: var(--display-sc);
-    letter-spacing: 0.2em;
-    font-size: 11px;
-    color: var(--ink-faded);
-  }
-
-  .site-title {
-    font-family: var(--display);
-    font-size: 56px;
-    line-height: 1;
-    color: var(--moss-deep);
-    margin: 8px 0 0;
-  }
-
-  .site-sub {
-    font-family: var(--display);
-    font-style: italic;
-    font-size: 22px;
-    color: var(--ink-soft);
-    margin-top: 10px;
-  }
-
-  .rule {
-    border-top: 1px solid var(--rule);
-    border-bottom: 3px double var(--rule);
-    height: 5px;
-    margin: 22px 0 32px;
-  }
-
-  .grid {
-    display: grid;
-    gap: 18px;
-  }
-
-  .card {
-    border: 1px solid var(--rule);
-    background: var(--paper-light);
-    padding: 22px 26px;
-    text-decoration: none;
-    color: inherit;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 14px;
-    transition: background 0.15s, transform 0.15s;
-  }
-
-  .card:hover {
-    background: #f8f1de;
-    transform: translateY(-1px);
-  }
-
-  .card-num {
-    font-family: var(--display);
-    font-style: italic;
-    font-size: 13px;
-    color: var(--ink-faded);
-  }
-
-  .card-en {
-    font-family: var(--display);
-    font-size: 24px;
-    color: var(--moss-deep);
-    margin-top: 4px;
-  }
-
-  .card-zh {
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin-top: 4px;
-  }
-
-  .arrow {
-    font-family: var(--display);
-    font-style: italic;
-    font-size: 28px;
-    color: var(--rust);
-    align-self: center;
-  }
-
-  .footer {
-    margin-top: 36px;
-    text-align: center;
-  }
+:root{--paper:#f4efe2;--ink:#29342a;--muted:#687267;--moss:#294839;--line:#cdd2c6}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 'Noto Serif TC',serif}.shell{width:min(1080px,calc(100% - 40px));margin:auto}header{display:flex;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line)}a{color:inherit}.brand{font:23px 'EB Garamond',serif;text-decoration:none;color:var(--moss);letter-spacing:.1em}.eyebrow{font:12px/1.4 monospace;letter-spacing:.12em;color:var(--muted)}.hero{display:grid;grid-template-columns:1fr 1.08fr;gap:70px;align-items:center;padding:70px 0}.hero h1{font:52px/1.2 'Noto Serif TC',serif;font-weight:400;color:var(--moss);margin:12px 0 20px}.hero p{color:var(--muted)}.hero img{display:block;width:100%;max-height:620px;object-fit:contain;background:#ece5d6}.section{border-top:1px solid var(--line);padding:55px 0}.section h2{font:32px 'Noto Serif TC',serif;font-weight:400;color:var(--moss);margin:0 0 6px}.timeline{display:grid;gap:24px;margin-top:28px}.entry{display:grid;text-decoration:none;grid-template-columns:210px 1fr;gap:28px;padding-bottom:25px;border-bottom:1px solid var(--line)}.entry img{width:210px;height:150px;object-fit:cover;background:#e7e2d7}.date{font:12px monospace;color:var(--muted)}.name{font-size:24px;color:var(--moss);margin:4px 0}.entry:hover .name,.entry:focus-visible .name{text-decoration:underline}.sci{font-family:'EB Garamond',serif;font-style:italic;color:var(--muted)}.empty{color:var(--muted)}footer{padding:28px 0;color:var(--muted);font:11px monospace;letter-spacing:.15em}@media(max-width:720px){.shell{width:min(100% - 28px,600px)}.hero{grid-template-columns:1fr;gap:28px;padding:45px 0}.hero h1{font-size:40px}.entry{grid-template-columns:1fr;gap:14px}.entry img{width:100%;height:auto;aspect-ratio:1.5}}
 </style>
-</head>
-<body>
-<div class="wrap">
-  <div class="label">Folia Domestica · est. MMXXVI</div>
-  <h1 class="site-title">家中花草志</h1>
-  <div class="site-sub">A Field Companion of Houseplants</div>
-  <div class="rule"></div>
-
-  <div class="grid">
-    <a class="card" href="home.html">
-      <div>
-        <div class="card-num">i.</div>
-        <div class="card-en">Catalogue · 植物目錄</div>
-        <div class="card-zh">所有植物一覽，依分類篩選</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-
-    <a class="card" href="substrate.html">
-      <div>
-        <div class="card-num">ii.</div>
-        <div class="card-en">Substrates · 介質介紹</div>
-        <div class="card-zh">珍珠石、椰殼屑、樹皮⋯⋯介質特性與適用對象</div>
-      </div>
-      <span class="arrow">→</span>
-    </a>
-  </div>
-
-  <div class="footer label">—— folia · flores · cura domestica ——</div>
-</div>
-</body>
+<header class="shell"><a class="brand" href="index.html">家中花草志</a><nav class="eyebrow"><a href="home.html">植物目錄 →</a></nav></header>
+<main class="shell"><section class="hero" id="hero"><div><p class="eyebrow">A FIELD COMPANION OF HOUSEPLANTS</p><h1>一些植物，<br>一些慢慢的日子。</h1><p>從一片新葉，到一段休眠。這裡用每一次觀察，慢慢長成植物的時間軸。</p></div></section><section class="section"><h2>最近的觀察</h2><p class="eyebrow">NOTES FROM THE GARDEN</p><div class="timeline" id="timeline"><p class="empty">正在讀取植物資料……</p></div></section></main><footer class="shell">—— FOLIA DOMESTICA ——</footer>
+<script>
+const slugs=["pachypodium-ambongense", "euphorbia-obesa", "pachypodium-brevicaule"];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+Promise.all(slugs.map(s=>fetch(`data/plants/${s}.json`).then(r=>r.json()))).then(plants=>{
+ const entries=plants.flatMap(p=>p.observations.map(o=>({p,o}))).sort((a,b)=>b.o.date.localeCompare(a.o.date));
+ const latest=entries[0]; const photoFor=({p,o})=>p.media?.observation_images?.find(x=>x.source_record?x.source_record===o.source_record:x.date===o.date)?.path; const feature=photoFor(latest);
+ if(feature)document.querySelector('#hero').insertAdjacentHTML('beforeend',`<img src="${esc(feature)}" alt="${esc(latest.p.identity.display_name)} ${esc(latest.o.date)} 觀察照">`);
+ document.querySelector('#timeline').innerHTML=entries.map(({p,o})=>{const image=photoFor({p,o});return `<a class="entry" href="${esc(p.slug)}.html">${image?`<img src="${esc(image)}" alt="${esc(p.identity.display_name)} ${esc(o.date)} 觀察">`:'<div></div>'}<div><div class="date">${esc(o.date)} · ${esc(o.status)}</div><div class="name">${esc(p.identity.display_name)}</div><div class="sci">${esc(p.identity.scientific_name)}</div><p>${esc(o.summary)}</p></div></a>`}).join('');
+}).catch(()=>document.querySelector('#timeline').innerHTML='<p class="empty">讀取資料失敗；請從網站根目錄啟動本機伺服器後再預覽。</p>');
+// 網站主圖使用 Ziv 的觀察照；植物圖版保留給 IG 視覺素材。
+</script>
 </html>
