@@ -40,10 +40,14 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 .grid { max-width: 1180px; margin: 36px auto 60px; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
 .card { text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper-light); display: flex; flex-direction: column; transition: transform 0.15s; }
 .card:hover { transform: translateY(-2px); }
-.card-cover { height: 200px; background-size: cover; background-position: center; filter: sepia(0.15) contrast(0.96); border-bottom: 1px solid var(--rule); }
-.card-cover--empty { background: var(--paper); }
-.card-cover--icon { height: 200px; display: grid; place-items: center; background: var(--paper); border-bottom: 1px solid var(--rule); }
-.card-icon { width: 128px; height: 128px; object-fit: contain; image-rendering: pixelated; }
+/* 封面始終保留實拍照；植物 GIF 只跟隨滑鼠游標。 */
+.card-cover { height: 200px; position: relative; overflow: hidden; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.card-photo { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: sepia(0.15) contrast(0.96); }
+.plant-cursor { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); width: 64px; height: 64px; object-fit: contain; image-rendering: pixelated; pointer-events: none; z-index: 9999; }
+.plant-cursor[hidden], .photo-error[hidden] { display: none; }
+.card.has-plant-cursor, .card.has-plant-cursor * { cursor: none !important; }
+.photo-error { position: absolute; inset: 0; display: grid; place-items: center; color: var(--ink-faded); font-size: 13px; }
+.card:focus-visible { outline: 2px solid var(--moss-deep); outline-offset: 4px; }
 .card-body { padding: 18px 20px; }
 .card-date { font-family: var(--mono); font-size: 10px; color: var(--ink-faded); margin-bottom: 6px; }
 .card-name { font-family: var(--display); font-size: 24px; color: var(--moss-deep); line-height: 1.2; }
@@ -65,8 +69,6 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
   .grid { padding: 0 16px; margin-top: 20px; margin-bottom: 40px;
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
   .card-cover { height: 130px; }
-  .card-cover--icon { height: 130px; }
-  .card-icon { width: 96px; height: 96px; }
   .card-body { padding: 12px 14px; }
   .card-name { font-size: 17px; }
   .footer-inner { padding: 16px; flex-direction: column; gap: 4px; text-align: center; }
@@ -84,7 +86,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 
 <div class="page-header">
   <h1 class="page-title">所有植物 · Catalogue</h1>
-  <div class="page-meta">共 13 筆 · 最後同步：2026-05-09 09:39</div>
+  <div class="page-meta">共 16 筆 · 封面更新：2026-10-03</div>
 </div>
 
 <div class="filter-bar">
@@ -92,8 +94,8 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 </div>
 
 <div class="grid">
-<a class="card" href="pachypodium-brevicaule.html" data-tags="塊根">
-  <div class="card-cover--icon"><img class="card-icon" src="images/pachypodium-brevicaule/ebisu-icon-64.png" alt="惠比須笑像素 icon"></div>
+<a class="card" href="pachypodium-brevicaule.html" data-tags="塊根" data-motion="images/pachypodium-brevicaule/leaf-sway-64.gif">
+  <div class="card-cover"><img class="card-photo" src="images/pachypodium-brevicaule/2026-09-14.jpg" alt="惠比須笑觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 09 / 14</div>
     <div class="card-name">惠比須笑</div>
@@ -103,7 +105,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
   </div>
 </a>
 <a class="card" href="euphorbia-obesa.html" data-tags="多肉">
-  <div class="card-cover" style="background-image:url('images/euphorbia-obesa/2026-09-20.jpg')"></div>
+  <div class="card-cover"><img class="card-photo" src="images/euphorbia-obesa/2026-09-20.jpg" alt="布紋球觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 09 / 20</div>
     <div class="card-name">布紋球</div>
@@ -113,7 +115,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
   </div>
 </a>
 <a class="card" href="tephrocactus-geometricus.html" data-tags="仙人掌">
-  <div class="card-cover" style="background-image:url('images/tephrocactus-geometricus/2026-05-30.jpg')"></div>
+  <div class="card-cover"><img class="card-photo" src="images/tephrocactus-geometricus/2026-05-30.jpg" alt="習字野仙人掌觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 05 / 30</div>
     <div class="card-name">習字野仙人掌</div>
@@ -122,8 +124,8 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a>
-<a class="card" href="post-34ed3d8dc0cf81af8709eb4a810b37fa.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+<a class="card" href="post-34ed3d8dc0cf81af8709eb4a810b37fa.html" data-tags="" data-motion="images/commiphora-monstruosa/leaf-sway-64.gif">
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/bgx9sqrX/212a51ffc802.jpg" alt="羽葉沒藥觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 26</div>
     <div class="card-name">羽葉沒藥</div>
@@ -131,8 +133,8 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-tags"></div>
     <div class="card-status">🌿 良好</div>
   </div>
-</a><a class="card" href="post-34ed3d8dc0cf8108ae0df23320072104.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+</a><a class="card" href="post-34ed3d8dc0cf8108ae0df23320072104.html" data-tags="" data-motion="images/commiphora-sinuata/leaf-sway-64.gif">
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/99BDqK1S/73b34221196e.jpg" alt="波折沒藥觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 26</div>
     <div class="card-name">波折沒藥</div>
@@ -141,7 +143,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-34ed3d8dc0cf81dfa901da259df02887.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/gM5xxpsm/4a24cdf0e8f6.jpg" alt="懷特沒藥觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 26</div>
     <div class="card-name">懷特沒藥</div>
@@ -150,7 +152,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-34ed3d8dc0cf81a08d37f429444b944b.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/356HwZFq/858e6f23ccf1.jpg" alt="尼哥乳香觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 26</div>
     <div class="card-name">尼哥乳香</div>
@@ -159,7 +161,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-34bd3d8dc0cf81ab8e18e1f56982bece.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/FqkdTRtg/a09a0546131d.jpg" alt="溫莎瓶幹觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 23</div>
     <div class="card-name">溫莎瓶幹</div>
@@ -168,7 +170,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-34fd3d8dc0cf81438df8da8d6b9e5e63.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/zhDSpdVf/4b3a5557eef4.jpg" alt="萊曼藍葉蘇鐵觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 22</div>
     <div class="card-name">萊曼藍葉蘇鐵</div>
@@ -177,7 +179,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-348d3d8dc0cf8109a6f7c9caa1ad0c4c.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/PzNwp4yD/f767406e4db9.jpg" alt="帝冠觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 20</div>
     <div class="card-name">帝冠</div>
@@ -186,7 +188,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌤 普通</div>
   </div>
 </a><a class="card" href="post-347d3d8dc0cf81bab62af8b1325a8486.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/dY4YNQB/1bea0eab819c.jpg" alt="索島細葉沙玫觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 19</div>
     <div class="card-name">索島細葉沙玫</div>
@@ -195,7 +197,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌤 普通</div>
   </div>
 </a><a class="card" href="post-345d3d8dc0cf81a5abc7e9e30e3aba1c.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/ycG8PZvn/9e01eb9d65e1.jpg" alt="南非龜甲龍觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 17</div>
     <div class="card-name">南非龜甲龍</div>
@@ -204,7 +206,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-343d3d8dc0cf81e8897de6770d15c21b.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/wZWGKXqF/a307cc142bb2.jpg" alt="Chimanimaniensis x Eugene Maraisii x Chimanimaniensis觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 15</div>
     <div class="card-name">Chimanimaniensis x Eugene Maraisii x Chimanimaniensis</div>
@@ -213,7 +215,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-341d3d8dc0cf8190ab02c960680c7aaf.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/d04k9pj7/6c2eee55652a.jpg" alt="銀冠玉觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 13</div>
     <div class="card-name">銀冠玉</div>
@@ -222,7 +224,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌤 普通</div>
   </div>
 </a><a class="card" href="post-340d3d8dc0cf81fdb95cd598cc92e6f4.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/s953g8tV/d6bac7b9a24e.jpg" alt="沙漠樹木觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 12</div>
     <div class="card-name">沙漠樹木</div>
@@ -231,7 +233,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a><a class="card" href="post-340d3d8dc0cf81d3b513fb494ecdaaa3.html" data-tags="">
-  <div class="card-cover card-cover--empty"></div>
+  <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/60jHY22f/70b5089dd7dd.jpg" alt="簇生福桂樹觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 12</div>
     <div class="card-name">簇生福桂樹</div>
@@ -244,9 +246,80 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 
 <footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>MMXXVI</span></div></footer>
 
+<img class="plant-cursor" alt="" aria-hidden="true" hidden>
+
 <script>
+
+// data-motion 只填核准的 GIF。封面不換圖，載入成功後才改變游標。
+const catalogueCards = [...document.querySelectorAll('.card')];
+const plantCursor = document.querySelector('.plant-cursor');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const hoverDevice = window.matchMedia('(hover: hover) and (pointer: fine)');
+const motionCache = new Map();
+let activeCard = null, requestId = 0;
+function stopCursor() {
+  requestId++;
+  if (activeCard) activeCard.classList.remove('has-plant-cursor');
+  activeCard = null;
+  plantCursor.hidden = true;
+  plantCursor.removeAttribute('src');
+}
+function positionCursor(event) {
+  plantCursor.style.left = event.clientX + 'px';
+  plantCursor.style.top = event.clientY + 'px';
+}
+function loadMotion(url) {
+  if (!motionCache.has(url)) {
+    motionCache.set(url, new Promise(resolve => {
+      const preload = new Image();
+      preload.onload = () => resolve(preload.naturalWidth > 0);
+      preload.onerror = () => resolve(false);
+      preload.src = url;
+    }));
+  }
+  return motionCache.get(url);
+}
+async function startCursor(card, event) {
+  stopCursor();
+  const url = card.dataset.motion;
+  if (!url || event.pointerType !== 'mouse' || reducedMotion.matches || !hoverDevice.matches) return;
+  activeCard = card;
+  positionCursor(event);
+  const id = requestId;
+  const loaded = await loadMotion(url);
+  if (id !== requestId || activeCard !== card) return;
+  if (!loaded || reducedMotion.matches || !hoverDevice.matches) { stopCursor(); return; }
+  plantCursor.src = url;
+  plantCursor.hidden = false;
+  card.classList.add('has-plant-cursor');
+}
+catalogueCards.forEach(card => {
+  const photo = card.querySelector('.card-photo');
+  const warning = card.querySelector('.photo-error');
+  photo.addEventListener('error', () => { warning.hidden = false; });
+  photo.addEventListener('load', () => { warning.hidden = true; });
+  if (photo.complete && photo.naturalWidth === 0) warning.hidden = false;
+  card.addEventListener('pointerenter', event => { startCursor(card, event); });
+  card.addEventListener('pointermove', event => {
+    if (event.pointerType !== 'mouse') return;
+    if (activeCard === card) positionCursor(event);
+    else startCursor(card, event);
+  });
+  card.addEventListener('pointerleave', () => { if (activeCard === card) stopCursor(); });
+});
+plantCursor.addEventListener('error', stopCursor);
+reducedMotion.addEventListener('change', stopCursor);
+hoverDevice.addEventListener('change', stopCursor);
+window.addEventListener('blur', stopCursor);
+window.addEventListener('scroll', stopCursor, { passive: true });
+document.addEventListener('pointerleave', stopCursor);
+document.addEventListener('visibilitychange', () => { if (document.hidden) stopCursor(); });
+// 鍵盤操作保留原本的聚焦框與一般游標。
+document.addEventListener('keydown', event => { if (event.key === 'Tab') stopCursor(); });
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
+    stopCursor();
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.filter;
