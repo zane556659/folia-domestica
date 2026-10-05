@@ -40,12 +40,10 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 .grid { max-width: 1180px; margin: 36px auto 60px; padding: 0 40px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
 .card { text-decoration: none; color: inherit; border: 1px solid var(--rule); background: var(--paper-light); display: flex; flex-direction: column; transition: transform 0.15s; }
 .card:hover { transform: translateY(-2px); }
-/* 封面始終保留實拍照；植物 GIF 只跟隨滑鼠游標。 */
+/* 植物目錄封面保留實拍照。 */
 .card-cover { height: 200px; position: relative; overflow: hidden; background: var(--paper); border-bottom: 1px solid var(--rule); }
 .card-photo { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: sepia(0.15) contrast(0.96); }
-.plant-cursor { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); width: 64px; height: 64px; object-fit: contain; image-rendering: pixelated; pointer-events: none; z-index: 9999; }
-.plant-cursor[hidden], .photo-error[hidden] { display: none; }
-.card.has-plant-cursor, .card.has-plant-cursor * { cursor: none !important; }
+.photo-error[hidden] { display: none; }
 .photo-error { position: absolute; inset: 0; display: grid; place-items: center; color: var(--ink-faded); font-size: 13px; }
 .card:focus-visible { outline: 2px solid var(--moss-deep); outline-offset: 4px; }
 .card-body { padding: 18px 20px; }
@@ -94,7 +92,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 </div>
 
 <div class="grid">
-<a class="card" href="pachypodium-brevicaule.html" data-tags="塊根" data-motion="images/pachypodium-brevicaule/leaf-sway-64.gif">
+<a class="card" href="pachypodium-brevicaule.html" data-tags="塊根">
   <div class="card-cover"><img class="card-photo" src="images/pachypodium-brevicaule/2026-09-14.jpg" alt="惠比須笑觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 09 / 14</div>
@@ -124,7 +122,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-status">🌿 良好</div>
   </div>
 </a>
-<a class="card" href="post-34ed3d8dc0cf81af8709eb4a810b37fa.html" data-tags="" data-motion="images/commiphora-monstruosa/leaf-sway-64.gif">
+<a class="card" href="post-34ed3d8dc0cf81af8709eb4a810b37fa.html" data-tags="">
   <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/bgx9sqrX/212a51ffc802.jpg" alt="羽葉沒藥觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 26</div>
@@ -133,7 +131,7 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
     <div class="card-tags"></div>
     <div class="card-status">🌿 良好</div>
   </div>
-</a><a class="card" href="post-34ed3d8dc0cf8108ae0df23320072104.html" data-tags="" data-motion="images/commiphora-sinuata/leaf-sway-64.gif">
+</a><a class="card" href="post-34ed3d8dc0cf8108ae0df23320072104.html" data-tags="">
   <div class="card-cover"><img class="card-photo" src="https://i.ibb.co/99BDqK1S/73b34221196e.jpg" alt="波折沒藥觀察照" loading="lazy" decoding="async"><span class="photo-error" hidden>照片暫時無法載入</span></div>
   <div class="card-body">
     <div class="card-date">2026 / 04 / 26</div>
@@ -246,80 +244,18 @@ html, body { margin: 0; background: var(--paper); color: var(--ink); font-family
 
 <footer class="site-footer"><div class="footer-inner"><span>—— Folia Domestica ——</span><span>MMXXVI</span></div></footer>
 
-<img class="plant-cursor" alt="" aria-hidden="true" hidden>
-
 <script>
 
-// data-motion 只填核准的 GIF。封面不換圖，載入成功後才改變游標。
-const catalogueCards = [...document.querySelectorAll('.card')];
-const plantCursor = document.querySelector('.plant-cursor');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-const hoverDevice = window.matchMedia('(hover: hover) and (pointer: fine)');
-const motionCache = new Map();
-let activeCard = null, requestId = 0;
-function stopCursor() {
-  requestId++;
-  if (activeCard) activeCard.classList.remove('has-plant-cursor');
-  activeCard = null;
-  plantCursor.hidden = true;
-  plantCursor.removeAttribute('src');
-}
-function positionCursor(event) {
-  plantCursor.style.left = event.clientX + 'px';
-  plantCursor.style.top = event.clientY + 'px';
-}
-function loadMotion(url) {
-  if (!motionCache.has(url)) {
-    motionCache.set(url, new Promise(resolve => {
-      const preload = new Image();
-      preload.onload = () => resolve(preload.naturalWidth > 0);
-      preload.onerror = () => resolve(false);
-      preload.src = url;
-    }));
-  }
-  return motionCache.get(url);
-}
-async function startCursor(card, event) {
-  stopCursor();
-  const url = card.dataset.motion;
-  if (!url || event.pointerType !== 'mouse' || reducedMotion.matches || !hoverDevice.matches) return;
-  activeCard = card;
-  positionCursor(event);
-  const id = requestId;
-  const loaded = await loadMotion(url);
-  if (id !== requestId || activeCard !== card) return;
-  if (!loaded || reducedMotion.matches || !hoverDevice.matches) { stopCursor(); return; }
-  plantCursor.src = url;
-  plantCursor.hidden = false;
-  card.classList.add('has-plant-cursor');
-}
-catalogueCards.forEach(card => {
+document.querySelectorAll('.card').forEach(card => {
   const photo = card.querySelector('.card-photo');
   const warning = card.querySelector('.photo-error');
   photo.addEventListener('error', () => { warning.hidden = false; });
   photo.addEventListener('load', () => { warning.hidden = true; });
   if (photo.complete && photo.naturalWidth === 0) warning.hidden = false;
-  card.addEventListener('pointerenter', event => { startCursor(card, event); });
-  card.addEventListener('pointermove', event => {
-    if (event.pointerType !== 'mouse') return;
-    if (activeCard === card) positionCursor(event);
-    else startCursor(card, event);
-  });
-  card.addEventListener('pointerleave', () => { if (activeCard === card) stopCursor(); });
 });
-plantCursor.addEventListener('error', stopCursor);
-reducedMotion.addEventListener('change', stopCursor);
-hoverDevice.addEventListener('change', stopCursor);
-window.addEventListener('blur', stopCursor);
-window.addEventListener('scroll', stopCursor, { passive: true });
-document.addEventListener('pointerleave', stopCursor);
-document.addEventListener('visibilitychange', () => { if (document.hidden) stopCursor(); });
-// 鍵盤操作保留原本的聚焦框與一般游標。
-document.addEventListener('keydown', event => { if (event.key === 'Tab') stopCursor(); });
 
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    stopCursor();
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const f = btn.dataset.filter;
