@@ -1,0 +1,24 @@
+/* Gentle, top-to-bottom Stagger entrance for the site pages. */
+.folia-motion-in {
+  animation: folia-stagger-in 560ms cubic-bezier(.18, .68, .24, 1) both;
+  animation-delay: var(--folia-motion-delay, 0ms);
+}
+.folia-motion-in:focus-visible,
+.folia-motion-in:focus-within {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes folia-stagger-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folia-motion-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
