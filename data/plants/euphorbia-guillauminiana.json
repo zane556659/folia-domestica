@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "slug": "euphorbia-guillauminiana",
+  "identity": {
+    "display_name": "鬼棲閣",
+    "scientific_name": "Euphorbia guillauminiana",
+    "aliases": [
+      "鬼棲閣",
+      "鬼淒閣"
+    ],
+    "identification_confidence": "依Ziv確認的植物名稱對應學名；照片可見特徵相符，未以無花照片宣稱獨立鑑定。"
+  },
+  "facts": {
+    "native_range": "馬達加斯加 Analalava。",
+    "habitat_note": "Kew 將其主要生物群系列為沙漠或乾燥灌叢；這是物種資料，不是本株栽培地的描述。",
+    "life_form": "半多肉亞灌木或灌木。",
+    "visible_features": [
+      "灰褐色的粗莖向上分枝",
+      "莖與枝條上可見尖刺",
+      "綠色葉片聚集於枝端，葉形呈橢圓至倒卵形"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Kew Plants of the World Online｜Euphorbia guillauminiana Boiteau",
+      "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:346707-1",
+      "checked_on": "2026-10-12",
+      "source_type": "authority",
+      "supports": [
+        "accepted_name",
+        "native_range",
+        "life_form",
+        "habitat",
+        "family"
+      ]
+    }
+  ],
+  "story": {
+    "sections": [
+      {
+        "heading": "來自馬達加斯加的鬼棲閣",
+        "paragraphs": [
+          "鬼棲閣的學名是 Euphorbia guillauminiana，屬於大戟科、大戟屬。依 Kew 的分類資料，它原生於馬達加斯加 Analalava，生活型是半多肉亞灌木或灌木，主要生長於沙漠或乾燥灌叢生物群系。"
+        ]
+      },
+      {
+        "heading": "這次照片裡的樣子",
+        "paragraphs": [
+          "這張入秋的紀錄照裡，灰褐色的粗莖向上分枝，莖與枝條上可見尖刺，綠色葉片聚集在枝端。這些是照片可見的本株特徵；是否需要換盆、明年是否長出新分枝，留給後續觀察。"
+        ]
+      }
+    ]
+  },
+  "observations": [
+    {
+      "date": "2026-10-12",
+      "source_record": "000_Agent\\plant-inbox\\2026-10-12\\1559174936826871808\\record.json",
+      "status": "完整",
+      "summary": "植物：鬼淒閣\n記錄的當下是入秋的時候。我原本打算明年幫它換盆，但感覺它的長勢還不錯，所以明年不用換盆了，就繼續觀察，看它明年會不會分頭出來。",
+      "teaser": "入秋先不換盆，繼續觀察明年會不會分頭。"
+    }
+  ],
+  "publication": {
+    "website": {
+      "status": "draft-local",
+      "path": "euphorbia-guillauminiana.html"
+    },
+    "instagram": {
+      "status": "draft-local-ready"
+    }
+  },
+  "media": {
+    "observation_images": [
+      {
+        "date": "2026-10-12",
+        "source_record": "000_Agent\\plant-inbox\\2026-10-12\\1559174936826871808\\record.json",
+        "path": "images/euphorbia-guillauminiana/2026-10-12-1559174936826871808-1.jpg"
+      }
+    ],
+    "feature_image": "images/euphorbia-guillauminiana/2026-10-12-1559174936826871808-1.jpg"
+  }
+}
