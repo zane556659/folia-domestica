@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "slug": "euphorbia-procumbens",
+  "identity": {
+    "display_name": "金輪際",
+    "scientific_name": "Euphorbia procumbens",
+    "aliases": [
+      "金輪際",
+      "Euphorbia gorgonis"
+    ],
+    "identification_confidence": "Ziv 確認這株是 Euphorbia gorgonis（金輪際）；Kew 世界維管束植物名錄與南非國家植物紅皮書都把 E. gorgonis A.Berger 列為 E. procumbens Mill. 的異名，學名依此採用 Euphorbia procumbens。照片外觀與此一致，但沒有單憑照片獨立鑑定。"
+  },
+  "facts": {
+    "native_range": "南非開普地區南部；南非國家植物紅皮書列為南非特有種，省級分布為東開普省。",
+    "habitat_note": "Kew 將它的氣候帶標為荒漠或乾燥灌叢。這是物種層級的大範圍分類，不是特定產地的描述。",
+    "life_form": "肉質亞灌木。",
+    "visible_features": [
+      "中央一個短而粗的莖頂，周圍放射出約六條細長分枝",
+      "分枝淺綠色，表面布滿一節一節的瘤狀突起",
+      "分枝前端長著細小的灰藍綠色線形小葉"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Kew World Checklist of Vascular Plants（WCVP）｜Euphorbia procumbens Mill.（ChecklistBank 收錄版）",
+      "url": "https://www.checklistbank.org/dataset/2232/taxon/81674",
+      "checked_on": "2026-10-19",
+      "source_type": "authority",
+      "supports": [
+        "accepted_name",
+        "native_range",
+        "life_form",
+        "habitat",
+        "family"
+      ]
+    },
+    {
+      "title": "SANBI Red List of South African Plants｜Euphorbia procumbens Mill.",
+      "url": "https://redlist.sanbi.org/species.php?species=574-986",
+      "checked_on": "2026-10-19",
+      "source_type": "authority",
+      "supports": [
+        "accepted_name",
+        "synonym",
+        "native_range",
+        "conservation_status"
+      ]
+    }
+  ],
+  "story": {
+    "sections": [
+      {
+        "heading": "來自南非開普的金輪際",
+        "paragraphs": [
+          "金輪際的學名是 Euphorbia procumbens，屬於大戟科大戟屬。很多人認識的名字 Euphorbia gorgonis，在 Kew 世界維管束植物名錄與南非國家植物紅皮書裡都被歸為它的異名。依 Kew 的資料，它原生於南非開普地區南部，生活型是肉質亞灌木，氣候帶屬於荒漠或乾燥灌叢；南非紅皮書則把它列為南非特有種，分布在東開普省，評估等級為無危。"
+        ]
+      },
+      {
+        "heading": "這株照片裡的樣子",
+        "paragraphs": [
+          "照片裡，中央是一個短而粗的莖頂，周圍放射出約六條細長分枝。分枝淺綠色，表面一節一節布滿瘤狀突起，前端長著細小的灰藍綠色線形小葉。這株是新買的，接替先前掛掉的那一棵，目前放在全日照的位置；日照會不會太強，留待之後的觀察。"
+        ]
+      }
+    ]
+  },
+  "observations": [
+    {
+      "date": "2026-10-19",
+      "source_record": "000_Agent\\plant-inbox\\2026-10-18\\1561503998014529627\\record.json",
+      "status": "完整",
+      "summary": "植物：金輪際\n這幾天新買的植物，因為之前那棵掛掉了，這一棵看能不能夠順利的成長。\n\n目前是全日照，看起來是有成長的趨向，想要繼續觀察看看是不是日照太強。",
+      "teaser": "新買的金輪際，接替先前掛掉的那一棵；目前全日照、看起來有在長，繼續觀察日照會不會太強。"
+    }
+  ],
+  "publication": {
+    "website": {
+      "status": "draft-local",
+      "path": "euphorbia-procumbens.html"
+    },
+    "instagram": {
+      "status": "draft-local-ready"
+    }
+  },
+  "media": {
+    "observation_images": [
+      {
+        "date": "2026-10-19",
+        "source_record": "000_Agent\\plant-inbox\\2026-10-18\\1561503998014529627\\record.json",
+        "path": "images/euphorbia-procumbens/2026-10-19-1561503998014529627-1.jpg"
+      }
+    ],
+    "feature_image": "images/euphorbia-procumbens/2026-10-19-1561503998014529627-1.jpg"
+  }
+}

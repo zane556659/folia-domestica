@@ -10,7 +10,7 @@
 <header class="shell"><a class="brand" href="index.html">家中花草志</a><nav class="eyebrow"><a href="home.html">植物目錄 →</a></nav></header>
 <main class="shell"><section class="hero" id="hero"><div><p class="eyebrow">A FIELD COMPANION OF HOUSEPLANTS</p><h1>一些植物，<br>一些慢慢的日子。</h1><p>從一片新葉，到一段休眠。這裡用每一次觀察，慢慢長成植物的時間軸。</p></div></section><section class="section"><h2>最近的觀察</h2><p class="eyebrow">NOTES FROM THE GARDEN</p><div class="timeline" id="timeline"><p class="empty">正在讀取植物資料……</p></div></section></main><footer class="shell">—— FOLIA DOMESTICA ——</footer>
 <script>
-const slugs=["euphorbia-guillauminiana", "pachypodium-ambongense", "euphorbia-obesa", "pachypodium-brevicaule"];
+const slugs=["euphorbia-procumbens", "euphorbia-guillauminiana", "pachypodium-ambongense", "euphorbia-obesa", "pachypodium-brevicaule"];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 Promise.all(slugs.map(s=>fetch(`data/plants/${s}.json`).then(r=>r.json()))).then(plants=>{
  const entries=plants.flatMap(p=>p.observations.map(o=>({p,o}))).sort((a,b)=>b.o.date.localeCompare(a.o.date));
